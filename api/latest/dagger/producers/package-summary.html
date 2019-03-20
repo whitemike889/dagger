@@ -109,6 +109,30 @@
  or an exception that was thrown during that production.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../dagger/producers/Producers.html" title="class in dagger.producers">Producers</a></td>
+<td class="colLast">
+<div class="block">Utility methods to create <a href="../../dagger/producers/Producer.html" title="interface in dagger.producers"><code>Producer</code></a>s.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation">
+<caption><span>Enum Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Enum</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../dagger/producers/CancellationPolicy.Propagation.html" title="enum in dagger.producers">CancellationPolicy.Propagation</a></td>
+<td class="colLast">
+<div class="block">Enumeration of the options for what happens to a parent component when one of its child
+ components is cancelled.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -121,34 +145,47 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="../../dagger/producers/CancellationPolicy.html" title="annotation in dagger.producers">CancellationPolicy</a></td>
+<td class="colLast">
+<div class="block">Annotates a production component or subcomponent to specify its policy when a child component is
+ cancelled.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/producers/ProducerModule.html" title="annotation in dagger.producers">ProducerModule</a></td>
 <td class="colLast">
 <div class="block">Annotates a class that contributes <a href="../../dagger/producers/Produces.html" title="annotation in dagger.producers"><code>Produces</code></a> bindings to the production component.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/producers/Produces.html" title="annotation in dagger.producers">Produces</a></td>
 <td class="colLast">
 <div class="block">Annotates methods of a producer module to create a production binding.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/producers/Production.html" title="annotation in dagger.producers">Production</a></td>
 <td class="colLast">
 <div class="block">Qualifies a type that will be provided to the framework for use internally.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/producers/ProductionComponent.html" title="annotation in dagger.producers">ProductionComponent</a></td>
 <td class="colLast">
 <div class="block">Annotates an interface or abstract class for which a fully-formed, dependency-injected
  implementation is to be generated from a set of <a href="../../dagger/producers/ProductionComponent.html#modules--">modules</a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/producers/ProductionComponent.Builder.html" title="annotation in dagger.producers">ProductionComponent.Builder</a></td>
 <td class="colLast">
-<div class="block">A builder for a component.</div>
+<div class="block">A builder for a production component.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../dagger/producers/ProductionComponent.Factory.html" title="annotation in dagger.producers">ProductionComponent.Factory</a></td>
+<td class="colLast">
+<div class="block">A factory for a production component.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -168,7 +205,13 @@
 <tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/producers/ProductionSubcomponent.Builder.html" title="annotation in dagger.producers">ProductionSubcomponent.Builder</a></td>
 <td class="colLast">
-<div class="block">A builder for a subcomponent.</div>
+<div class="block">A builder for a production subcomponent.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../dagger/producers/ProductionSubcomponent.Factory.html" title="annotation in dagger.producers">ProductionSubcomponent.Factory</a></td>
+<td class="colLast">
+<div class="block">A factory for a production subcomponent.</div>
 </td>
 </tr>
 </tbody>

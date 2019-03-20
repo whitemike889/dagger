@@ -98,21 +98,6 @@
 </a>
 <h3>Uses of <a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a> in <a href="../../../dagger/model/package-summary.html">dagger.model</a></h3>
 <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../dagger/model/package-summary.html">dagger.model</a> that return <a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a></span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a></code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.BindingNode.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.BindingNode.html#binding--">binding</a></span>()</code>
-<div class="block">The binding.</div>
-</td>
-</tr>
-</tbody>
-</table>
-<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
 <caption><span>Methods in <a href="../../../dagger/model/package-summary.html">dagger.model</a> that return types with arguments of type <a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
@@ -121,17 +106,77 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>java.util.Optional&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.MaybeBindingNode.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MaybeBindingNode.html#maybeBinding--">maybeBinding</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.MaybeBinding.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MaybeBinding.html#binding--">binding</a></span>()</code>
 <div class="block">The binding, or empty if missing.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>default java.util.Optional&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.BindingNode.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.BindingNode.html#maybeBinding--">maybeBinding</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>java.util.Optional&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.MissingBinding.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MissingBinding.html#binding--">binding</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">This always returns <code>Optional.empty()</code>.</span></div>
+</div>
+</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>java.util.Optional&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.MissingBindingNode.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MissingBindingNode.html#maybeBinding--">maybeBinding</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>default java.util.Optional&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Binding.</span><code><span class="memberNameLink"><a href="../../../dagger/model/Binding.html#binding--">binding</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">This always returns <code>Optional.of(this)</code>.</span></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#bindings--">bindings</a></span>()</code>
+<div class="block">Returns the bindings.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#bindings-dagger.model.Key-">bindings</a></span>(<a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a>&nbsp;key)</code>
+<div class="block">Returns the bindings for a key.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#requestedBindings-dagger.model.Binding-">requestedBindings</a></span>(<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&nbsp;binding)</code>
+<div class="block">Returns the bindings that a given binding directly request as a dependency.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#requestingBindings-dagger.model.BindingGraph.MaybeBinding-">requestingBindings</a></span>(<a href="../../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a>&nbsp;binding)</code>
+<div class="block">Returns the bindings that directly request a given binding as a dependency.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../dagger/model/package-summary.html">dagger.model</a> with parameters of type <a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>com.google.common.collect.ImmutableSetMultimap&lt;<a href="../../../dagger/model/DependencyRequest.html" title="class in dagger.model">DependencyRequest</a>,<a href="../../../dagger/model/BindingGraph.DependencyEdge.html" title="interface in dagger.model">BindingGraph.DependencyEdge</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#dependencyEdges-dagger.model.Binding-">dependencyEdges</a></span>(<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&nbsp;binding)</code>
+<div class="block">Returns the dependency edges for the dependencies of a binding.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#requestedBindings-dagger.model.Binding-">requestedBindings</a></span>(<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&nbsp;binding)</code>
+<div class="block">Returns the bindings that a given binding directly request as a dependency.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#requestedMaybeMissingBindings-dagger.model.Binding-">requestedMaybeMissingBindings</a></span>(<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&nbsp;binding)</code>
+<div class="block">Returns the bindings or missing bindings that a given binding directly requests as a
+ dependency.</div>
+</td>
 </tr>
 </tbody>
 </table>

@@ -72,6 +72,10 @@
 <p>@CheckReturnValue
 </p>
 <h1 title="Package" class="title">Package&nbsp;dagger.android</h1>
+<div class="docSummary">
+<div class="block">APIs to assist with performing injection on Android.</div>
+</div>
+<p>See:&nbsp;<a href="#package.description">Description</a></p>
 </div>
 <div class="contentContainer">
 <ul class="blockList">
@@ -151,25 +155,18 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/AndroidInjector.Builder.html" title="class in dagger.android">AndroidInjector.Builder</a>&lt;T&gt;</td>
-<td class="colLast">
-<div class="block">An adapter that lets the common <a href="../../dagger/Subcomponent.Builder.html" title="annotation in dagger"><code>Subcomponent.Builder</code></a> pattern implement <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a>.</div>
+<td class="colLast">Deprecated
+<div class="block"><span class="deprecationComment">Prefer <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a> now that components can have <a href="../../dagger/Component.Factory.html" title="annotation in dagger"><code>factories</code></a> instead of builders</span></div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../dagger/android/AndroidMemorySensitiveReferenceManager.html" title="class in dagger.android">AndroidMemorySensitiveReferenceManager</a></td>
-<td class="colLast">Deprecated
-<div class="block"><span class="deprecationComment">The releasable references feature is deprecated and scheduled for removal in July
-     2018.</span></div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerActivity.html" title="class in dagger.android">DaggerActivity</a></td>
 <td class="colLast">
 <div class="block">An <code>Activity</code> that injects its members in <a href="../../dagger/android/DaggerActivity.html#onCreate-android.os.Bundle-"><code>DaggerActivity.onCreate(Bundle)</code></a> and can be used to
  inject <code>Fragment</code>s attached to it.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerApplication.html" title="class in dagger.android">DaggerApplication</a></td>
 <td class="colLast">
 <div class="block">An <code>Application</code> that injects its members and can be used to inject <code>Activity</code>s,
@@ -177,45 +174,44 @@
  attached to it.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerBroadcastReceiver.html" title="class in dagger.android">DaggerBroadcastReceiver</a></td>
 <td class="colLast">
 <div class="block">A <code>BroadcastReceiver</code> that injects its members in every call to <a href="../../dagger/android/DaggerBroadcastReceiver.html#onReceive-android.content.Context-android.content.Intent-"><code>DaggerBroadcastReceiver.onReceive(Context,
  Intent)</code></a>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerContentProvider.html" title="class in dagger.android">DaggerContentProvider</a></td>
 <td class="colLast">
 <div class="block">A <code>ContentProvider</code> that injects its members in <a href="../../dagger/android/DaggerContentProvider.html#onCreate--"><code>DaggerContentProvider.onCreate()</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerDialogFragment.html" title="class in dagger.android">DaggerDialogFragment</a></td>
-<td class="colLast">
-<div class="block">A <code>DialogFragment</code> that injects its members in <a href="../../dagger/android/DaggerDialogFragment.html#onAttach-android.content.Context-"><code>DaggerDialogFragment.onAttach(Context)</code></a> and can be used
- to inject child <code>Fragment</code>s attached to it.</div>
+<td class="colLast">Deprecated
+<div class="block"><span class="deprecationComment">Framework fragments are deprecated in Android P; prefer <code>dagger.android.support.DaggerDialogFragment</code> to use a support-library-friendly <code>dagger.android</code> dialog fragment implementation.</span></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerFragment.html" title="class in dagger.android">DaggerFragment</a></td>
 <td class="colLast">Deprecated
 <div class="block"><span class="deprecationComment">Framework fragments are deprecated in Android P; prefer <code>dagger.android.support.DaggerFragment</code> to use a support-library-friendly <code>dagger.android</code> fragment implementation.</span></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerIntentService.html" title="class in dagger.android">DaggerIntentService</a></td>
 <td class="colLast">
 <div class="block">An <code>IntentService</code> that injects its members in <a href="../../dagger/android/DaggerIntentService.html#onCreate--"><code>DaggerIntentService.onCreate()</code></a>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerService.html" title="class in dagger.android">DaggerService</a></td>
 <td class="colLast">
 <div class="block">A <code>Service</code> that injects its members in <a href="../../dagger/android/DaggerService.html#onCreate--"><code>DaggerService.onCreate()</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/android/DispatchingAndroidInjector.html" title="class in dagger.android">DispatchingAndroidInjector</a>&lt;T&gt;</td>
 <td class="colLast">
 <div class="block">Performs members-injection on instances of core Android types (e.g.</div>
@@ -250,58 +246,26 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="../../dagger/android/ActivityKey.html" title="annotation in dagger.android">ActivityKey</a></td>
-<td class="colLast">
-<div class="block"><a href="../../dagger/MapKey.html" title="annotation in dagger"><code>MapKey</code></a> annotation to key bindings by a type of an <code>Activity</code>.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/android/AndroidInjectionKey.html" title="annotation in dagger.android">AndroidInjectionKey</a></td>
 <td class="colLast">
 <div class="block"><a href="../../dagger/MapKey.html" title="annotation in dagger"><code>MapKey</code></a> annotation to key <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a> bindings.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../dagger/android/BroadcastReceiverKey.html" title="annotation in dagger.android">BroadcastReceiverKey</a></td>
-<td class="colLast">
-<div class="block"><a href="../../dagger/MapKey.html" title="annotation in dagger"><code>MapKey</code></a> annotation to key bindings by a type of a <code>BroadcastReceiver</code>.</div>
-</td>
-</tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../dagger/android/ContentProviderKey.html" title="annotation in dagger.android">ContentProviderKey</a></td>
-<td class="colLast">
-<div class="block"><a href="../../dagger/MapKey.html" title="annotation in dagger"><code>MapKey</code></a> annotation to key bindings by a type of a <code>ContentProvider</code>.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/ContributesAndroidInjector.html" title="annotation in dagger.android">ContributesAndroidInjector</a></td>
 <td class="colLast">
 <div class="block">Generates an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> for the return type of this method.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../dagger/android/FragmentKey.html" title="annotation in dagger.android">FragmentKey</a></td>
-<td class="colLast">
-<div class="block"><a href="../../dagger/MapKey.html" title="annotation in dagger"><code>MapKey</code></a> annotation to key bindings by a type of a <code>Fragment</code>.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../dagger/android/ReleaseReferencesAt.html" title="annotation in dagger.android">ReleaseReferencesAt</a></td>
-<td class="colLast">Deprecated
-<div class="block"><span class="deprecationComment">The releasable references feature is deprecated and scheduled for removal in July
-     2018.</span></div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../dagger/android/ServiceKey.html" title="annotation in dagger.android">ServiceKey</a></td>
-<td class="colLast">
-<div class="block"><a href="../../dagger/MapKey.html" title="annotation in dagger"><code>MapKey</code></a> annotation to key bindings by a type of a <code>Service</code>.</div>
 </td>
 </tr>
 </tbody>
 </table>
 </li>
 </ul>
+<a name="package.description">
+<!--   -->
+</a>
+<h2 title="Package dagger.android Description">Package dagger.android Description</h2>
+<div class="block">APIs to assist with performing injection on Android.</div>
 </div>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar.bottom">

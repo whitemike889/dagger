@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":10,"i2":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":38,"i1":42,"i2":38};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -119,8 +119,12 @@ var activeTableTab = "activeTableTab";
 <dd><a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;<a href="../../dagger/android/AndroidInjector.html" title="type parameter in AndroidInjector">T</a>&gt;</dd>
 </dl>
 <hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Prefer <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a> now that components can have <a href="../../dagger/Component.Factory.html" title="annotation in dagger"><code>factories</code></a> instead of builders</span></div>
+</div>
 <br>
-<pre>public abstract static class <span class="typeNameLabel">AndroidInjector.Builder&lt;T&gt;</span>
+<pre>@Deprecated
+public abstract static class <span class="typeNameLabel">AndroidInjector.Builder&lt;T&gt;</span>
 extends java.lang.Object
 implements <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android">AndroidInjector.Factory</a>&lt;T&gt;</pre>
 <div class="block">An adapter that lets the common <a href="../../dagger/Subcomponent.Builder.html" title="annotation in dagger"><code>Subcomponent.Builder</code></a> pattern implement <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a>.</div>
@@ -142,7 +146,9 @@ implements <a href="../../dagger/android/AndroidInjector.Factory.html" title="in
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../dagger/android/AndroidInjector.Builder.html#Builder--">Builder</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../dagger/android/AndroidInjector.Builder.html#Builder--">Builder</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -154,7 +160,7 @@ implements <a href="../../dagger/android/AndroidInjector.Factory.html" title="in
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -162,18 +168,21 @@ implements <a href="../../dagger/android/AndroidInjector.Factory.html" title="in
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>abstract <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/android/AndroidInjector.Builder.html#build--">build</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns a newly-constructed <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/android/AndroidInjector.Builder.html#create-T-">create</a></span>(<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&nbsp;instance)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Creates an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> for <code>instance</code>.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/android/AndroidInjector.Builder.html#seedInstance-T-">seedInstance</a></span>(<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&nbsp;instance)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Provides <code>instance</code> to be used in the binding graph of the built <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a>.</div>
 </td>
 </tr>
@@ -206,6 +215,7 @@ implements <a href="../../dagger/android/AndroidInjector.Factory.html" title="in
 <li class="blockList">
 <h4>Builder</h4>
 <pre>public&nbsp;Builder()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -225,6 +235,7 @@ implements <a href="../../dagger/android/AndroidInjector.Factory.html" title="in
 <li class="blockList">
 <h4>create</h4>
 <pre>public final&nbsp;<a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&gt;&nbsp;create(<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&nbsp;instance)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../dagger/android/AndroidInjector.Factory.html#create-T-">AndroidInjector.Factory</a></code></span></div>
 <div class="block">Creates an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> for <code>instance</code>. This should be the same instance
  that will be passed to <a href="../../dagger/android/AndroidInjector.html#inject-T-"><code>AndroidInjector.inject(Object)</code></a>.</div>
@@ -244,6 +255,7 @@ implements <a href="../../dagger/android/AndroidInjector.Factory.html" title="in
 <h4>seedInstance</h4>
 <pre><a href="../../dagger/BindsInstance.html" title="annotation in dagger">@BindsInstance</a>
 public abstract&nbsp;void&nbsp;seedInstance(<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&nbsp;instance)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Provides <code>instance</code> to be used in the binding graph of the built <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a>. By default, this is used as a <a href="../../dagger/BindsInstance.html" title="annotation in dagger"><code>BindsInstance</code></a> method, but it may be
  overridden to provide any modules which need a reference to the activity.
 
@@ -257,6 +269,7 @@ public abstract&nbsp;void&nbsp;seedInstance(<a href="../../dagger/android/Androi
 <li class="blockList">
 <h4>build</h4>
 <pre>public abstract&nbsp;<a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&gt;&nbsp;build()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns a newly-constructed <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a>.</div>
 </li>
 </ul>

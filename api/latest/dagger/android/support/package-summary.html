@@ -109,7 +109,7 @@
 <tr class="rowColor">
 <td class="colFirst"><a href="../../../dagger/android/support/AndroidSupportInjectionModule.html" title="class in dagger.android.support">AndroidSupportInjectionModule</a></td>
 <td class="colLast">
-<div class="block">Configures bindings to ensure the usability of <code>dagger.android</code> and <code>dagger.android.support</code> framework classes.</div>
+<div class="block">This module no longer provides any value beyond what is provided in <a href="../../../dagger/android/AndroidInjectionModule.html" title="class in dagger.android"><code>AndroidInjectionModule</code></a> and is just an alias.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -133,27 +133,17 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../../dagger/android/support/DaggerDialogFragment.html" title="class in dagger.android.support">DaggerDialogFragment</a></td>
+<td class="colLast">
+<div class="block">A <code>DialogFragment</code> that injects its members in <a href="../../../dagger/android/support/DaggerDialogFragment.html#onAttach-android.content.Context-"><code>DaggerDialogFragment.onAttach(Context)</code></a> and can be used
+ to inject child <code>Fragment</code>s attached to it.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../dagger/android/support/DaggerFragment.html" title="class in dagger.android.support">DaggerFragment</a></td>
 <td class="colLast">
 <div class="block">A <code>Fragment</code> that injects its members in <a href="../../../dagger/android/support/DaggerFragment.html#onAttach-android.content.Context-"><code>DaggerFragment.onAttach(Context)</code></a> and can be used to
  inject child <code>Fragment</code>s attached to it.</div>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li class="blockList">
-<table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Annotation Types Summary table, listing annotation types, and an explanation">
-<caption><span>Annotation Types Summary</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Annotation Type</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../dagger/android/support/FragmentKey.html" title="annotation in dagger.android.support">FragmentKey</a></td>
-<td class="colLast">
-<div class="block"><a href="../../../dagger/MapKey.html" title="annotation in dagger"><code>MapKey</code></a> annotation to key bindings by a type of a <code>Fragment</code>.</div>
 </td>
 </tr>
 </tbody>

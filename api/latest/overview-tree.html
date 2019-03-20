@@ -82,7 +82,6 @@
 <li><a href="dagger/multibindings/package-tree.html">dagger.multibindings</a>, </li>
 <li><a href="dagger/producers/package-tree.html">dagger.producers</a>, </li>
 <li><a href="dagger/producers/monitoring/package-tree.html">dagger.producers.monitoring</a>, </li>
-<li><a href="dagger/releasablereferences/package-tree.html">dagger.releasablereferences</a>, </li>
 <li><a href="dagger/spi/package-tree.html">dagger.spi</a></li>
 </ul>
 </div>
@@ -104,13 +103,10 @@
 <li type="circle">dagger.android.internal.<a href="dagger/android/internal/AndroidInjectionKeys.html" title="class in dagger.android.internal"><span class="typeNameLink">AndroidInjectionKeys</span></a></li>
 <li type="circle">dagger.android.<a href="dagger/android/AndroidInjectionModule.html" title="class in dagger.android"><span class="typeNameLink">AndroidInjectionModule</span></a></li>
 <li type="circle">dagger.android.<a href="dagger/android/AndroidInjector.Builder.html" title="class in dagger.android"><span class="typeNameLink">AndroidInjector.Builder</span></a>&lt;T&gt; (implements dagger.android.<a href="dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android">AndroidInjector.Factory</a>&lt;T&gt;)</li>
-<li type="circle">dagger.android.<a href="dagger/android/AndroidMemorySensitiveReferenceManager.html" title="class in dagger.android"><span class="typeNameLink">AndroidMemorySensitiveReferenceManager</span></a></li>
 <li type="circle">dagger.android.support.<a href="dagger/android/support/AndroidSupportInjection.html" title="class in dagger.android.support"><span class="typeNameLink">AndroidSupportInjection</span></a></li>
 <li type="circle">dagger.android.support.<a href="dagger/android/support/AndroidSupportInjectionModule.html" title="class in dagger.android.support"><span class="typeNameLink">AndroidSupportInjectionModule</span></a></li>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="class in dagger.model"><span class="typeNameLink">BindingGraph.ChildFactoryMethodEdge</span></a> (implements dagger.model.<a href="dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a>)</li>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.DependencyEdge.html" title="class in dagger.model"><span class="typeNameLink">BindingGraph.DependencyEdge</span></a> (implements dagger.model.<a href="dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a>)</li>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.MissingBindingNode.html" title="class in dagger.model"><span class="typeNameLink">BindingGraph.MissingBindingNode</span></a> (implements dagger.model.<a href="dagger/model/BindingGraph.MaybeBindingNode.html" title="interface in dagger.model">BindingGraph.MaybeBindingNode</a>)</li>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.SubcomponentBuilderBindingEdge.html" title="class in dagger.model"><span class="typeNameLink">BindingGraph.SubcomponentBuilderBindingEdge</span></a> (implements dagger.model.<a href="dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a>)</li>
+<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.html" title="class in dagger.model"><span class="typeNameLink">BindingGraph</span></a></li>
+<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.MissingBinding.html" title="class in dagger.model"><span class="typeNameLink">BindingGraph.MissingBinding</span></a> (implements dagger.model.<a href="dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a>)</li>
 <li type="circle">android.content.BroadcastReceiver
 <ul>
 <li type="circle">dagger.android.<a href="dagger/android/DaggerBroadcastReceiver.html" title="class in dagger.android"><span class="typeNameLink">DaggerBroadcastReceiver</span></a></li>
@@ -171,15 +167,6 @@
 <li type="circle">dagger.model.<a href="dagger/model/DependencyRequest.html" title="class in dagger.model"><span class="typeNameLink">DependencyRequest</span></a></li>
 <li type="circle">dagger.model.<a href="dagger/model/DependencyRequest.Builder.html" title="class in dagger.model"><span class="typeNameLink">DependencyRequest.Builder</span></a></li>
 <li type="circle">dagger.android.<a href="dagger/android/DispatchingAndroidInjector.html" title="class in dagger.android"><span class="typeNameLink">DispatchingAndroidInjector</span></a>&lt;T&gt; (implements dagger.android.<a href="dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;T&gt;)</li>
-<li type="circle">com.google.common.collect.ForwardingObject
-<ul>
-<li type="circle">dagger.model.<a href="dagger/model/ForwardingNetwork.html" title="class in dagger.model"><span class="typeNameLink">ForwardingNetwork</span></a>&lt;N,E&gt; (implements com.google.common.graph.Network&lt;N,E&gt;)
-<ul>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.html" title="class in dagger.model"><span class="typeNameLink">BindingGraph</span></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li type="circle">android.app.Fragment (implements android.content.ComponentCallbacks2, android.view.View.OnCreateContextMenuListener)
 <ul>
 <li type="circle">dagger.android.<a href="dagger/android/DaggerFragment.html" title="class in dagger.android"><span class="typeNameLink">DaggerFragment</span></a> (implements dagger.android.<a href="dagger/android/HasFragmentInjector.html" title="interface in dagger.android">HasFragmentInjector</a>)</li>
@@ -200,6 +187,7 @@
 <li type="circle">dagger.android.support.<a href="dagger/android/support/DaggerAppCompatDialogFragment.html" title="class in dagger.android.support"><span class="typeNameLink">DaggerAppCompatDialogFragment</span></a> (implements dagger.android.support.<a href="dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support">HasSupportFragmentInjector</a>)</li>
 </ul>
 </li>
+<li type="circle">dagger.android.support.<a href="dagger/android/support/DaggerDialogFragment.html" title="class in dagger.android.support"><span class="typeNameLink">DaggerDialogFragment</span></a> (implements dagger.android.support.<a href="dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support">HasSupportFragmentInjector</a>)</li>
 </ul>
 </li>
 </ul>
@@ -212,6 +200,7 @@
 <li type="circle">dagger.grpc.server.<a href="dagger/grpc/server/NettyServerModule.html" title="class in dagger.grpc.server"><span class="typeNameLink">NettyServerModule</span></a></li>
 <li type="circle">dagger.producers.<a href="dagger/producers/Produced.html" title="class in dagger.producers"><span class="typeNameLink">Produced</span></a>&lt;T&gt;</li>
 <li type="circle">dagger.producers.monitoring.<a href="dagger/producers/monitoring/ProducerMonitor.html" title="class in dagger.producers.monitoring"><span class="typeNameLink">ProducerMonitor</span></a></li>
+<li type="circle">dagger.producers.<a href="dagger/producers/Producers.html" title="class in dagger.producers"><span class="typeNameLink">Producers</span></a></li>
 <li type="circle">dagger.producers.monitoring.<a href="dagger/producers/monitoring/ProducerTimingRecorder.html" title="class in dagger.producers.monitoring"><span class="typeNameLink">ProducerTimingRecorder</span></a></li>
 <li type="circle">dagger.producers.monitoring.<a href="dagger/producers/monitoring/ProducerToken.html" title="class in dagger.producers.monitoring"><span class="typeNameLink">ProducerToken</span></a></li>
 <li type="circle">dagger.producers.monitoring.<a href="dagger/producers/monitoring/ProductionComponentMonitor.html" title="class in dagger.producers.monitoring"><span class="typeNameLink">ProductionComponentMonitor</span></a>
@@ -248,15 +237,20 @@
 <ul>
 <li type="circle">dagger.android.<a href="dagger/android/AndroidInjector.html" title="interface in dagger.android"><span class="typeNameLink">AndroidInjector</span></a>&lt;T&gt;</li>
 <li type="circle">dagger.android.<a href="dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><span class="typeNameLink">AndroidInjector.Factory</span></a>&lt;T&gt;</li>
-<li type="circle">dagger.model.<a href="dagger/model/Binding.html" title="interface in dagger.model"><span class="typeNameLink">Binding</span></a></li>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.Edge.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.Edge</span></a></li>
+<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.Edge.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.Edge</span></a>
+<ul>
+<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.ChildFactoryMethodEdge</span></a></li>
+<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.DependencyEdge.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.DependencyEdge</span></a></li>
+<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.SubcomponentCreatorBindingEdge.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.SubcomponentCreatorBindingEdge</span></a></li>
+</ul>
+</li>
 <li type="circle">dagger.model.<a href="dagger/model/BindingGraph.Node.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.Node</span></a>
 <ul>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.BindingNode.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.BindingNode</span></a></li>
+<li type="circle">dagger.model.<a href="dagger/model/Binding.html" title="interface in dagger.model"><span class="typeNameLink">Binding</span></a></li>
 <li type="circle">dagger.model.<a href="dagger/model/BindingGraph.ComponentNode.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.ComponentNode</span></a></li>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.MaybeBindingNode.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.MaybeBindingNode</span></a>
+<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.MaybeBinding</span></a>
 <ul>
-<li type="circle">dagger.model.<a href="dagger/model/BindingGraph.BindingNode.html" title="interface in dagger.model"><span class="typeNameLink">BindingGraph.BindingNode</span></a></li>
+<li type="circle">dagger.model.<a href="dagger/model/Binding.html" title="interface in dagger.model"><span class="typeNameLink">Binding</span></a></li>
 </ul>
 </li>
 </ul>
@@ -275,22 +269,19 @@
 <li type="circle">dagger.producers.monitoring.<a href="dagger/producers/monitoring/ProductionComponentTimingRecorder.html" title="interface in dagger.producers.monitoring"><span class="typeNameLink">ProductionComponentTimingRecorder</span></a></li>
 <li type="circle">dagger.producers.monitoring.<a href="dagger/producers/monitoring/ProductionComponentTimingRecorder.Factory.html" title="interface in dagger.producers.monitoring"><span class="typeNameLink">ProductionComponentTimingRecorder.Factory</span></a></li>
 <li type="circle">dagger.grpc.server.<a href="dagger/grpc/server/ProxyServerCallHandler.ServiceDefinitionFactory.html" title="interface in dagger.grpc.server"><span class="typeNameLink">ProxyServerCallHandler.ServiceDefinitionFactory</span></a></li>
-<li type="circle">dagger.releasablereferences.<a href="dagger/releasablereferences/ReleasableReferenceManager.html" title="interface in dagger.releasablereferences"><span class="typeNameLink">ReleasableReferenceManager</span></a>
-<ul>
-<li type="circle">dagger.releasablereferences.<a href="dagger/releasablereferences/TypedReleasableReferenceManager.html" title="interface in dagger.releasablereferences"><span class="typeNameLink">TypedReleasableReferenceManager</span></a>&lt;M&gt;</li>
-</ul>
-</li>
 </ul>
 <h2 title="Annotation Type Hierarchy">Annotation Type Hierarchy</h2>
 <ul>
 <li type="circle">dagger.<a href="dagger/Subcomponent.html" title="annotation in dagger"><span class="typeNameLink">Subcomponent</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/Subcomponent.Builder.html" title="annotation in dagger"><span class="typeNameLink">Subcomponent.Builder</span></a> (implements java.lang.annotation.Annotation)</li>
+<li type="circle">dagger.<a href="dagger/Subcomponent.Factory.html" title="annotation in dagger"><span class="typeNameLink">Subcomponent.Factory</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/Reusable.html" title="annotation in dagger"><span class="typeNameLink">Reusable</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/Provides.html" title="annotation in dagger"><span class="typeNameLink">Provides</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/Module.html" title="annotation in dagger"><span class="typeNameLink">Module</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/MapKey.html" title="annotation in dagger"><span class="typeNameLink">MapKey</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/Component.html" title="annotation in dagger"><span class="typeNameLink">Component</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/Component.Builder.html" title="annotation in dagger"><span class="typeNameLink">Component.Builder</span></a> (implements java.lang.annotation.Annotation)</li>
+<li type="circle">dagger.<a href="dagger/Component.Factory.html" title="annotation in dagger"><span class="typeNameLink">Component.Factory</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/BindsOptionalOf.html" title="annotation in dagger"><span class="typeNameLink">BindsOptionalOf</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/BindsInstance.html" title="annotation in dagger"><span class="typeNameLink">BindsInstance</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.<a href="dagger/Binds.html" title="annotation in dagger"><span class="typeNameLink">Binds</span></a> (implements java.lang.annotation.Annotation)</li>
@@ -304,26 +295,20 @@
 <li type="circle">dagger.multibindings.<a href="dagger/multibindings/ClassKey.html" title="annotation in dagger.multibindings"><span class="typeNameLink">ClassKey</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/ProductionSubcomponent.html" title="annotation in dagger.producers"><span class="typeNameLink">ProductionSubcomponent</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/ProductionSubcomponent.Builder.html" title="annotation in dagger.producers"><span class="typeNameLink">ProductionSubcomponent.Builder</span></a> (implements java.lang.annotation.Annotation)</li>
+<li type="circle">dagger.producers.<a href="dagger/producers/ProductionSubcomponent.Factory.html" title="annotation in dagger.producers"><span class="typeNameLink">ProductionSubcomponent.Factory</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/ProductionScope.html" title="annotation in dagger.producers"><span class="typeNameLink">ProductionScope</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/ProductionComponent.html" title="annotation in dagger.producers"><span class="typeNameLink">ProductionComponent</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/ProductionComponent.Builder.html" title="annotation in dagger.producers"><span class="typeNameLink">ProductionComponent.Builder</span></a> (implements java.lang.annotation.Annotation)</li>
+<li type="circle">dagger.producers.<a href="dagger/producers/ProductionComponent.Factory.html" title="annotation in dagger.producers"><span class="typeNameLink">ProductionComponent.Factory</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/Production.html" title="annotation in dagger.producers"><span class="typeNameLink">Production</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/Produces.html" title="annotation in dagger.producers"><span class="typeNameLink">Produces</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.producers.<a href="dagger/producers/ProducerModule.html" title="annotation in dagger.producers"><span class="typeNameLink">ProducerModule</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.android.<a href="dagger/android/ServiceKey.html" title="annotation in dagger.android"><span class="typeNameLink">ServiceKey</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.android.<a href="dagger/android/ReleaseReferencesAt.html" title="annotation in dagger.android"><span class="typeNameLink">ReleaseReferencesAt</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.android.<a href="dagger/android/FragmentKey.html" title="annotation in dagger.android"><span class="typeNameLink">FragmentKey</span></a> (implements java.lang.annotation.Annotation)</li>
+<li type="circle">dagger.producers.<a href="dagger/producers/CancellationPolicy.html" title="annotation in dagger.producers"><span class="typeNameLink">CancellationPolicy</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.android.<a href="dagger/android/ContributesAndroidInjector.html" title="annotation in dagger.android"><span class="typeNameLink">ContributesAndroidInjector</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.android.<a href="dagger/android/ContentProviderKey.html" title="annotation in dagger.android"><span class="typeNameLink">ContentProviderKey</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.android.<a href="dagger/android/BroadcastReceiverKey.html" title="annotation in dagger.android"><span class="typeNameLink">BroadcastReceiverKey</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.android.<a href="dagger/android/AndroidInjectionKey.html" title="annotation in dagger.android"><span class="typeNameLink">AndroidInjectionKey</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.android.<a href="dagger/android/ActivityKey.html" title="annotation in dagger.android"><span class="typeNameLink">ActivityKey</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.android.support.<a href="dagger/android/support/FragmentKey.html" title="annotation in dagger.android.support"><span class="typeNameLink">FragmentKey</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.grpc.server.<a href="dagger/grpc/server/GrpcService.html" title="annotation in dagger.grpc.server"><span class="typeNameLink">GrpcService</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.grpc.server.<a href="dagger/grpc/server/ForGrpcService.html" title="annotation in dagger.grpc.server"><span class="typeNameLink">ForGrpcService</span></a> (implements java.lang.annotation.Annotation)</li>
 <li type="circle">dagger.grpc.server.<a href="dagger/grpc/server/CallScoped.html" title="annotation in dagger.grpc.server"><span class="typeNameLink">CallScoped</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.releasablereferences.<a href="dagger/releasablereferences/ForReleasableReferences.html" title="annotation in dagger.releasablereferences"><span class="typeNameLink">ForReleasableReferences</span></a> (implements java.lang.annotation.Annotation)</li>
-<li type="circle">dagger.releasablereferences.<a href="dagger/releasablereferences/CanReleaseReferences.html" title="annotation in dagger.releasablereferences"><span class="typeNameLink">CanReleaseReferences</span></a> (implements java.lang.annotation.Annotation)</li>
 </ul>
 <h2 title="Enum Hierarchy">Enum Hierarchy</h2>
 <ul>
@@ -331,6 +316,7 @@
 <ul>
 <li type="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable)
 <ul>
+<li type="circle">dagger.producers.<a href="dagger/producers/CancellationPolicy.Propagation.html" title="enum in dagger.producers"><span class="typeNameLink">CancellationPolicy.Propagation</span></a></li>
 <li type="circle">dagger.model.<a href="dagger/model/RequestKind.html" title="enum in dagger.model"><span class="typeNameLink">RequestKind</span></a></li>
 <li type="circle">dagger.model.<a href="dagger/model/BindingKind.html" title="enum in dagger.model"><span class="typeNameLink">BindingKind</span></a></li>
 </ul>

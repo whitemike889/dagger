@@ -116,24 +116,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a></code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.MaybeBindingNode.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MaybeBindingNode.html#key--">key</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.MaybeBinding.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MaybeBinding.html#key--">key</a></span>()</code>
 <div class="block">The key of the binding, or for which there is no binding.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>default <a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a></code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.BindingNode.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.BindingNode.html#key--">key</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a></code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.MissingBindingNode.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MissingBindingNode.html#key--">key</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.MissingBinding.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MissingBinding.html#key--">key</a></span>()</code>
 <div class="block">The key for which there is no binding.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Binding.</span><code><span class="memberNameLink"><a href="../../../dagger/model/Binding.html#key--">key</a></span>()</code>
-<div class="block">The binding's key.</div>
 </td>
 </tr>
 </tbody>
@@ -146,12 +136,18 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/BindingGraph.BindingNode.html" title="interface in dagger.model">BindingGraph.BindingNode</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#bindingNodes-dagger.model.Key-">bindingNodes</a></span>(<a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a>&nbsp;key)</code>
-<div class="block">Returns the binding nodes for a key.</div>
+<td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#bindings-dagger.model.Key-">bindings</a></span>(<a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a>&nbsp;key)</code>
+<div class="block">Returns the bindings for a key.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><span class="typeNameLabel">RequestKind.</span><code><span class="memberNameLink"><a href="../../../dagger/model/RequestKind.html#format-dagger.model.Key-">format</a></span>(<a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a>&nbsp;key)</code>
+<div class="block">Returns a string that represents requests of this kind for a key.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../dagger/model/DependencyRequest.Builder.html" title="class in dagger.model">DependencyRequest.Builder</a></code></td>
 <td class="colLast"><span class="typeNameLabel">DependencyRequest.Builder.</span><code><span class="memberNameLink"><a href="../../../dagger/model/DependencyRequest.Builder.html#key-dagger.model.Key-">key</a></span>(<a href="../../../dagger/model/Key.html" title="class in dagger.model">Key</a>&nbsp;key)</code>&nbsp;</td>
 </tr>

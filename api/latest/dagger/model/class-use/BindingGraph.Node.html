@@ -105,9 +105,9 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>static interface&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.BindingNode.html" title="interface in dagger.model">BindingGraph.BindingNode</a></span></code>
-<div class="block">A <b>binding node</b> in the binding graph.</div>
+<td class="colFirst"><code>interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a></span></code>
+<div class="block">The association between a <a href="../../../dagger/model/Key.html" title="class in dagger.model"><code>Key</code></a> and the way in which instances of the key are provided.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -118,8 +118,8 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static interface&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MaybeBindingNode.html" title="interface in dagger.model">BindingGraph.MaybeBindingNode</a></span></code>
-<div class="block">A node in the binding graph that is either a <a href="../../../dagger/model/BindingGraph.BindingNode.html" title="interface in dagger.model"><code>BindingGraph.BindingNode</code></a> or a <a href="../../../dagger/model/BindingGraph.MissingBindingNode.html" title="class in dagger.model"><code>BindingGraph.MissingBindingNode</code></a>.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a></span></code>
+<div class="block">A node in the binding graph that is either a <a href="../../../dagger/model/Binding.html" title="interface in dagger.model"><code>Binding</code></a> or a <a href="../../../dagger/model/BindingGraph.MissingBinding.html" title="class in dagger.model"><code>BindingGraph.MissingBinding</code></a>.</div>
 </td>
 </tr>
 </tbody>
@@ -133,8 +133,23 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MissingBindingNode.html" title="class in dagger.model">BindingGraph.MissingBindingNode</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.MissingBinding.html" title="class in dagger.model">BindingGraph.MissingBinding</a></span></code>
 <div class="block">A node in the binding graph that represents a missing binding for a key in a component.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../dagger/model/package-summary.html">dagger.model</a> that return types with arguments of type <a href="../../../dagger/model/BindingGraph.Node.html" title="interface in dagger.model">BindingGraph.Node</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>abstract com.google.common.graph.ImmutableNetwork&lt;<a href="../../../dagger/model/BindingGraph.Node.html" title="interface in dagger.model">BindingGraph.Node</a>,<a href="../../../dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#network--">network</a></span>()</code>
+<div class="block">Returns the graph in its <code>Network</code> representation.</div>
 </td>
 </tr>
 </tbody>

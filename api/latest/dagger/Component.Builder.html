@@ -43,7 +43,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../dagger/Component.html" title="annotation in dagger"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../dagger/Lazy.html" title="interface in dagger"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../dagger/Component.Factory.html" title="annotation in dagger"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?dagger/Component.Builder.html" target="_top">Frames</a></li>
@@ -92,35 +92,55 @@
 <li class="blockList">
 <hr>
 <br>
-<pre>@Target(value=TYPE)
+<pre>@Retention(value=RUNTIME)
+ @Target(value=TYPE)
  @Documented
 public static @interface <span class="memberNameLabel">Component.Builder</span></pre>
-<div class="block">A builder for a component. Components may have a single nested static abstract class or
- interface annotated with <code>@Component.Builder</code>.  If they do, then the component's
- generated builder will match the API in the type.  Builders must follow some rules:
+<div class="block">A builder for a component.
+
+ <p>A builder is a type with setter methods for the <a href="../dagger/Component.html#modules--">modules</a>,
+ <a href="../dagger/Component.html#dependencies--">dependencies</a> and <a href="../dagger/BindsInstance.html" title="annotation in dagger">bound instances</a>
+ required by the component and a single no-argument build method that creates a new component
+ instance.
+
+ <p>Components may have a single nested <code>static abstract class</code> or <code>interface</code>
+ annotated with <code>@Component.Builder</code>. If they do, then Dagger will generate a builder
+ class that implements that type. Note that a component with a <code>@Component.Builder</code> may
+ not also have a <code>@Component.Factory</code>.
+
+ <p>Builder types must follow some rules:
+
  <ul>
- <li> A single abstract method with no arguments must exist, and must return the component.
-      (This is typically the <code>build()</code> method.)
- <li> All other abstract methods must take a single argument and must return void,
-      the Builder type, or a supertype of the builder.
- <li> Each component dependency <b>must</b> have an abstract setter method.
- <li> Each module dependency that Dagger can't instantiate itself (e.g, the module
-      doesn't have a visible no-args constructor) <b>must</b> have an abstract setter method.
-      Other module dependencies (ones that Dagger can instantiate) are allowed, but not required.
- <li> Non-abstract methods are allowed, but ignored as far as validation and builder generation
-      are concerned.
+   <li>There <i>must</i> be exactly one abstract no-argument method that returns the component
+       type or one of its supertypes, called the "build method".
+   <li>There <i>may</i> be other other abstract methods, called "setter methods".
+   <li>Setter methods <i>must</i> take a single argument and return <code>void</code>, the builder
+       type or a supertype of the builder type.
+   <li>There <i>must</i> be a setter method for each <a href="../dagger/Component.html#dependencies--">component dependency</a>.
+   <li>There <i>must</i> be a setter method for each non-<code>abstract</code> <a href="../dagger/Component.html#modules--">module</a> that has non-<code>static</code> binding methods, unless Dagger can
+       instantiate that module with a visible no-argument constructor.
+   <li>There <i>may</i> be setter methods for modules that Dagger can instantiate or does not
+       need to instantiate.
+   <li>There <i>may</i> be setter methods annotated with <code>@BindsInstance</code>. These methods
+       bind the instance passed to them within the component. See <a href="../dagger/BindsInstance.html" title="annotation in dagger"><code>@BindsInstance</code></a> for more information.
+   <li>There <i>may</i> be non-<code>abstract</code> methods, but they are ignored as far as
+       validation and builder generation are concerned.
  </ul>
- 
- For example, this could be a valid Component with a Builder: <pre><code>
+
+ For example, this could be a valid <code>Component</code> with a <code>Builder</code>:
+
+ <pre><code>
   @Component(modules = {BackendModule.class, FrontendModule.class})
  interface MyComponent {
    MyWidget myWidget();
-   
+
     @Component.Builder
    interface Builder {
-     MyComponent build();
      Builder backendModule(BackendModule bm);
      Builder frontendModule(FrontendModule fm);
+      @BindsInstance
+     Builder foo(Foo foo);
+     MyComponent build();
    }
  }</code></pre></div>
 </li>
@@ -150,7 +170,7 @@ public static @interface <span class="memberNameLabel">Component.Builder</span><
 <div class="subNav">
 <ul class="navList">
 <li><a href="../dagger/Component.html" title="annotation in dagger"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../dagger/Lazy.html" title="interface in dagger"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../dagger/Component.Factory.html" title="annotation in dagger"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?dagger/Component.Builder.html" target="_top">Frames</a></li>

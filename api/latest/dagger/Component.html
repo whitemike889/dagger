@@ -112,20 +112,21 @@ public @interface <span class="memberNameLabel">Component</span></pre>
  <a name="provision-methods"></a>
  <h3>Provision methods</h3>
 
- <p>Provision methods have no parameters and return an <code>injected</code> or
- <a href="../dagger/Provides.html" title="annotation in dagger"><code>provided</code></a> type. Each method may have a <code>Qualifier</code> annotation as well. The
- following are all valid provision method declarations: <pre><code>
+ <p>Provision methods have no parameters and return an <code>injected</code> or <a href="../dagger/Provides.html" title="annotation in dagger"><code>provided</code></a> type. Each method may have a <code>Qualifier</code> annotation as well. The following are
+ all valid provision method declarations:
+
+ <pre><code>
    SomeType getSomeType();
     Set&lt;SomeType&gt; getSomeTypes();
     @PortNumber int getPortNumber();
  </code></pre>
 
  <p>Provision methods, like typical <code>injection</code> sites, may use <code>Provider</code> or
- <a href="../dagger/Lazy.html" title="interface in dagger"><code>Lazy</code></a> to more explicitly control provision requests. A <code>Provider</code> allows the user
- of the component to request provision any number of times by calling <code>Provider.get()</code>. A
- <a href="../dagger/Lazy.html" title="interface in dagger"><code>Lazy</code></a> will only ever request a single provision, but will defer it until the first call to
- <a href="../dagger/Lazy.html#get--"><code>Lazy.get()</code></a>. The following provision methods all request provision of the same type, but
- each implies different semantics: <pre><code>
+ <a href="../dagger/Lazy.html" title="interface in dagger"><code>Lazy</code></a> to more explicitly control provision requests. A <code>Provider</code> allows the user of
+ the component to request provision any number of times by calling <code>Provider.get()</code>. A <a href="../dagger/Lazy.html" title="interface in dagger"><code>Lazy</code></a> will only ever request a single provision, but will defer it until the first call to <a href="../dagger/Lazy.html#get--"><code>Lazy.get()</code></a>. The following provision methods all request provision of the same type, but each
+ implies different semantics:
+
+ <pre><code>
    SomeType getSomeType();
     Provider&lt;SomeType&gt; getSomeTypeProvider();
     Lazy&lt;SomeType&gt; getLazySomeType();
@@ -137,24 +138,29 @@ public @interface <span class="memberNameLabel">Component</span></pre>
  <p>Members-injection methods have a single parameter and inject dependencies into each of the
  <code>Inject</code>-annotated fields and methods of the passed instance. A members-injection method
  may be void or return its single parameter as a convenience for chaining. The following are all
- valid members-injection method declarations: <pre><code>
+ valid members-injection method declarations:
+
+ <pre><code>
    void injectSomeType(SomeType someType);
    SomeType injectAndReturnSomeType(SomeType someType);
  </code></pre>
 
  <p>A method with no parameters that returns a <a href="../dagger/MembersInjector.html" title="interface in dagger"><code>MembersInjector</code></a> is equivalent to a members
  injection method. Calling <a href="../dagger/MembersInjector.html#injectMembers-T-"><code>MembersInjector.injectMembers(T)</code></a> on the returned object will
- perform the same work as a members injection method. For example: <pre><code>
+ perform the same work as a members injection method. For example:
+
+ <pre><code>
     MembersInjector&lt;SomeType&gt; getSomeTypeMembersInjector();
  </code></pre>
 
  <h4>A note about covariance</h4>
 
- <p>While a members-injection method for a type will accept instances of its subtypes, only
- <code>Inject</code>-annotated members of the parameter type and its supertypes will be injected;
- members of subtypes will not. For example, given the following types, only <code>a</code> and
- <code>b</code> will be injected into an instance of <code>Child</code> when it is passed to the
- members-injection method <code>injectSelf(Self instance)</code>: <pre><code>
+ <p>While a members-injection method for a type will accept instances of its subtypes, only <code>Inject</code>-annotated members of the parameter type and its supertypes will be injected; members of
+ subtypes will not. For example, given the following types, only <code>a</code> and <code>b</code> will be
+ injected into an instance of <code>Child</code> when it is passed to the members-injection method
+ <code>injectSelf(Self instance)</code>:
+
+ <pre><code>
    class Parent {
       @Inject A a;
    }
@@ -171,17 +177,22 @@ public @interface <span class="memberNameLabel">Component</span></pre>
  <a name="instantiation"></a>
  <h2>Instantiation</h2>
 
- <p>Component implementations are primarily instantiated via a generated
- <a href="http://en.wikipedia.org/wiki/Builder_pattern">builder</a>. An instance of the builder
- is obtained using the <code>builder()</code> method on the component implementation.
- If a nested <code>@Component.Builder</code> type exists in the component, the <code>builder()</code>
- method will return a generated implementation of that type.  If no nested
- <code>@Component.Builder</code> exists, the returned builder has a method to set each of the
- <a href="../dagger/Component.html#modules--">modules()</a> and component <a href="../dagger/Component.html#dependencies--">dependencies()</a> named with the
- <a href="http://en.wikipedia.org/wiki/CamelCase">lower camel case</a> version of the module
- or dependency type. Each component dependency and module without a visible default constructor
- must be set explicitly, but any module with a default or no-args constructor accessible to the
- component implementation may be elided. This is an example usage of a component builder:
+ <p>Component implementations are primarily instantiated via a generated <a
+ href="http://en.wikipedia.org/wiki/Builder_pattern">builder</a> or <a
+ href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">factory</a>.
+
+ <p>If a nested <a href="../dagger/Component.Builder.html" title="annotation in dagger"><code>@Component.Builder</code></a> or <a href="../dagger/Component.Factory.html" title="annotation in dagger"><code>@Component.Factory</code></a> type
+ exists in the component, Dagger will generate an implementation of that type. If neither exists,
+ Dagger will generate a builder type that has a method to set each of the <a href="../dagger/Component.html#modules--">modules()</a>
+ and component <a href="../dagger/Component.html#dependencies--">dependencies()</a> named with the <a
+ href="http://en.wikipedia.org/wiki/CamelCase">lower camel case</a> version of the module or
+ dependency type.
+
+ <p>In either case, the Dagger-generated component type will have a static method, named either
+ <code>builder()</code> or <code>factory()</code>, that returns a builder or factory instance.
+
+ <p>Example of using a builder:
+
  <pre><code>
    public static void main(String[] args) {
      OtherComponent otherComponent = ...;
@@ -196,19 +207,31 @@ public @interface <span class="memberNameLabel">Component</span></pre>
    }
  </code></pre>
 
+ <p>Example of using a factory:
+
+ <pre><code>
+ public static void main(String[] args) {
+     OtherComponent otherComponent = ...;
+     MyComponent component = DaggerMyComponent.factory()
+         .create(otherComponent, new FlagsModule(args), new MyApplicationModule());
+     // Note that all parameters to a factory method are required, even if one is for a module
+     // that Dagger could instantiate. The only case where null is legal is for a
+     // @BindsInstance @Nullable parameter.
+   }
+ </code></pre>
+
  <p>In the case that a component has no component dependencies and only no-arg modules, the
- generated component will also have a factory method <code>create()</code>.
- <code>SomeComponent.create()</code> and <code>SomeComponent.builder().build()</code> are both valid and
+ generated component will also have a factory method <code>create()</code>. <code>SomeComponent.create()</code> and <code>SomeComponent.builder().build()</code> are both valid and
  equivalent.
 
  <a name="scope"></a>
  <h2>Scope</h2>
 
- <p>Each Dagger component can be associated with a scope by annotating it with the
- scope annotation. The component implementation ensures that there is only one
- provision of each scoped binding per instance of the component. If the component declares a
- scope, it may only contain unscoped bindings or bindings of that scope anywhere in the graph. For
- example: <pre><code>
+ <p>Each Dagger component can be associated with a scope by annotating it with the scope annotation. The component implementation ensures that there is only one provision of
+ each scoped binding per instance of the component. If the component declares a scope, it may only
+ contain unscoped bindings or bindings of that scope anywhere in the graph. For example:
+
+ <pre><code>
     @Singleton  @Component
    interface MyApplicationComponent {
      // this component can only inject types using unscoped or  @Singleton bindings
@@ -217,8 +240,7 @@ public @interface <span class="memberNameLabel">Component</span></pre>
 
  <p>In order to get the proper behavior associated with a scope annotation, it is the caller's
  responsibility to instantiate new component instances when appropriate. A <code>Singleton</code>
- component, for instance, should only be instantiated once per application, while a
- <code>RequestScoped</code> component should be instantiated once per request. Because components are
+ component, for instance, should only be instantiated once per application, while a <code>RequestScoped</code> component should be instantiated once per request. Because components are
  self-contained implementations, exiting a scope is as simple as dropping all references to the
  component instance.
 
@@ -233,20 +255,22 @@ public @interface <span class="memberNameLabel">Component</span></pre>
  <h3>Subcomponents</h3>
 
  <p>The simplest way to relate two components is by declaring a <a href="../dagger/Subcomponent.html" title="annotation in dagger"><code>Subcomponent</code></a>. A
- subcomponent behaves exactly like a component, but has its implementation generated within
- a parent component or subcomponent. That relationship allows the subcomponent implementation to
- inherit the <em>entire</em> binding graph from its parent when it is declared. For that reason,
- a subcomponent isn't evaluated for completeness until it is associated with a parent.
+ subcomponent behaves exactly like a component, but has its implementation generated within a
+ parent component or subcomponent. That relationship allows the subcomponent implementation to
+ inherit the <em>entire</em> binding graph from its parent when it is declared. For that reason, a
+ subcomponent isn't evaluated for completeness until it is associated with a parent.
 
  <p>Subcomponents are declared by listing the class in the <a href="../dagger/Module.html#subcomponents--"><code>Module.subcomponents()</code></a>
  attribute of one of the parent component's modules. This binds the <a href="../dagger/Subcomponent.Builder.html" title="annotation in dagger"><code>Subcomponent.Builder</code></a>
- within the parent component.
+ or <a href="../dagger/Subcomponent.Factory.html" title="annotation in dagger"><code>Subcomponent.Factory</code></a> for that subcomponent within the parent component.
 
  <p>Subcomponents may also be declared via a factory method on a parent component or subcomponent.
  The method may have any name, but must return the subcomponent. The factory method's parameters
  may be any number of the subcomponent's modules, but must at least include those without visible
  no-arg constructors. The following is an example of a factory method that creates a
- request-scoped subcomponent from a singleton-scoped parent: <pre><code>
+ request-scoped subcomponent from a singleton-scoped parent:
+
+ <pre><code>
     @Singleton  @Component
    interface ApplicationComponent {
      // component methods...
@@ -260,11 +284,11 @@ public @interface <span class="memberNameLabel">Component</span></pre>
 
  <p>While subcomponents are the simplest way to compose subgraphs of bindings, subcomponents are
  tightly coupled with the parents; they may use any binding defined by their ancestor component
- and subcomponents. As an alternative, components can use bindings only from another
- <em>component interface</em> by declaring a <a href="../dagger/Component.html#dependencies--">component dependency</a>. When
- a type is used as a component dependency, each <a href="#provision-methods">provision method</a>
- on the dependency is bound as a provider. Note that <em>only</em> the bindings exposed as
- provision methods are available through component dependencies.</div>
+ and subcomponents. As an alternative, components can use bindings only from another <em>component
+ interface</em> by declaring a <a href="../dagger/Component.html#dependencies--">component dependency</a>. When a type is
+ used as a component dependency, each <a href="#provision-methods">provision method</a> on the
+ dependency is bound as a provider. Note that <em>only</em> the bindings exposed as provision
+ methods are available through component dependencies.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>2.0</dd>

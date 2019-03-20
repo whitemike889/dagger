@@ -113,11 +113,12 @@ public interface <span class="typeNameLabel">AndroidInjector&lt;T&gt;</span></pr
 <div class="block">Performs members-injection for a concrete subtype of a <a
  href="https://developer.android.com/guide/components/">core Android type</a> (e.g., <code>Activity</code> or <code>Fragment</code>).
 
- <p>Commonly implemented by <a href="../../dagger/Subcomponent.html" title="annotation in dagger"><code>Subcomponent</code></a>-annotated types whose <a href="../../dagger/Subcomponent.Builder.html" title="annotation in dagger"><code>Subcomponent.Builder</code></a> extends <a href="../../dagger/android/AndroidInjector.Builder.html" title="class in dagger.android"><code>AndroidInjector.Builder</code></a>.</div>
+ <p>Commonly implemented by <a href="../../dagger/Subcomponent.html" title="annotation in dagger"><code>Subcomponent</code></a>-annotated types whose <a href="../../dagger/Subcomponent.Factory.html" title="annotation in dagger"><code>Subcomponent.Factory</code></a> extends <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../dagger/android/AndroidInjection.html" title="class in dagger.android"><code>AndroidInjection</code></a>, 
-<a href="../../dagger/android/DispatchingAndroidInjector.html" title="class in dagger.android"><code>DispatchingAndroidInjector</code></a></dd>
+<a href="../../dagger/android/DispatchingAndroidInjector.html" title="class in dagger.android"><code>DispatchingAndroidInjector</code></a>, 
+<a href="../../dagger/android/ContributesAndroidInjector.html" title="annotation in dagger.android"><code>ContributesAndroidInjector</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -140,7 +141,9 @@ public interface <span class="typeNameLabel">AndroidInjector&lt;T&gt;</span></pr
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/android/AndroidInjector.Builder.html" title="class in dagger.android">AndroidInjector.Builder</a>&lt;<a href="../../dagger/android/AndroidInjector.Builder.html" title="type parameter in AndroidInjector.Builder">T</a>&gt;</span></code>
-<div class="block">An adapter that lets the common <a href="../../dagger/Subcomponent.Builder.html" title="annotation in dagger"><code>Subcomponent.Builder</code></a> pattern implement <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a>.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Prefer <a href="../../dagger/android/AndroidInjector.Factory.html" title="interface in dagger.android"><code>AndroidInjector.Factory</code></a> now that components can have <a href="../../dagger/Component.Factory.html" title="annotation in dagger"><code>factories</code></a> instead of builders</span></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">

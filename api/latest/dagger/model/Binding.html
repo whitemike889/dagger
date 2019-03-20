@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":50,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -98,12 +98,20 @@ var activeTableTab = "activeTableTab";
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a>, <a href="../../dagger/model/BindingGraph.Node.html" title="interface in dagger.model">BindingGraph.Node</a></dd>
+</dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">Binding</span></pre>
+<pre>public interface <span class="typeNameLabel">Binding</span>
+extends <a href="../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a></pre>
 <div class="block">The association between a <a href="../../dagger/model/Key.html" title="class in dagger.model"><code>Key</code></a> and the way in which instances of the key are provided.
  Includes any <a href="../../dagger/model/DependencyRequest.html" title="class in dagger.model">dependencies</a> that are needed in order to provide the
- instances.</div>
+ instances.
+
+ <p>If a binding is owned by more than one component, there is one <code>Binding</code> for every
+ owning component.</div>
 </li>
 </ul>
 </div>
@@ -117,60 +125,81 @@ var activeTableTab = "activeTableTab";
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.util.Optional&lt;? extends javax.lang.model.element.Element&gt;</code></td>
+<td class="colFirst"><code>default java.util.Optional&lt;<a href="../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#binding--">binding</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">This always returns <code>Optional.of(this)</code>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.Optional&lt;javax.lang.model.element.Element&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#bindingElement--">bindingElement</a></span>()</code>
 <div class="block">The <code>Element</code> that declares this binding.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../dagger/model/ComponentPath.html" title="class in dagger.model">ComponentPath</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#componentPath--">componentPath</a></span>()</code>
+<div class="block">The component that owns the binding, or in which the binding is missing.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.util.Optional&lt;javax.lang.model.element.TypeElement&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#contributingModule--">contributingModule</a></span>()</code>
 <div class="block">The <code>TypeElement</code> of the module which contributes this binding.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../dagger/model/DependencyRequest.html" title="class in dagger.model">DependencyRequest</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#dependencies--">dependencies</a></span>()</code>
 <div class="block">The dependencies of this binding.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#isNullable--">isNullable</a></span>()</code>
-<div class="block">Returns <code>true</code> if this binding may provide <code>null</code> instead of an instance of <a href="../../dagger/model/Binding.html#key--"><code>key()</code></a>.</div>
+<div class="block">Returns <code>true</code> if this binding may provide <code>null</code> instead of an instance of <a href="../../dagger/model/BindingGraph.MaybeBinding.html#key--"><code>BindingGraph.MaybeBinding.key()</code></a>.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#isProduction--">isProduction</a></span>()</code>
 <div class="block">Returns <code>true</code> if this is a production binding, e.g.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../dagger/model/Key.html" title="class in dagger.model">Key</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#key--">key</a></span>()</code>
-<div class="block">The binding's key.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../dagger/model/BindingKind.html" title="enum in dagger.model">BindingKind</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#kind--">kind</a></span>()</code>
 <div class="block">The kind of binding this instance represents.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#requiresModuleInstance--">requiresModuleInstance</a></span>()</code>
+<div class="block">Returns <code>true</code> if using this binding requires an instance of the <a href="../../dagger/model/Binding.html#contributingModule--"><code>contributingModule()</code></a>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.util.Optional&lt;<a href="../../dagger/model/Scope.html" title="class in dagger.model">Scope</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/Binding.html#scope--">scope</a></span>()</code>
 <div class="block">The scope of this binding if it has one.</div>
 </td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.dagger.model.BindingGraph.MaybeBinding">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;dagger.model.<a href="../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a></h3>
+<code><a href="../../dagger/model/BindingGraph.MaybeBinding.html#key--">key</a></code></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -185,14 +214,38 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="key--">
+<a name="componentPath--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>key</h4>
-<pre><a href="../../dagger/model/Key.html" title="class in dagger.model">Key</a>&nbsp;key()</pre>
-<div class="block">The binding's key.</div>
+<h4>componentPath</h4>
+<pre><a href="../../dagger/model/ComponentPath.html" title="class in dagger.model">ComponentPath</a>&nbsp;componentPath()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../dagger/model/BindingGraph.MaybeBinding.html#componentPath--">BindingGraph.MaybeBinding</a></code></span></div>
+<div class="block">The component that owns the binding, or in which the binding is missing.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../dagger/model/BindingGraph.MaybeBinding.html#componentPath--">componentPath</a></code>&nbsp;in interface&nbsp;<code><a href="../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../dagger/model/BindingGraph.Node.html#componentPath--">componentPath</a></code>&nbsp;in interface&nbsp;<code><a href="../../dagger/model/BindingGraph.Node.html" title="interface in dagger.model">BindingGraph.Node</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="binding--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>binding</h4>
+<pre>@Deprecated
+default&nbsp;java.util.Optional&lt;<a href="../../dagger/model/Binding.html" title="interface in dagger.model">Binding</a>&gt;&nbsp;binding()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">This always returns <code>Optional.of(this)</code>.</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../dagger/model/BindingGraph.MaybeBinding.html#binding--">BindingGraph.MaybeBinding</a></code></span></div>
+<div class="block">The binding, or empty if missing.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../dagger/model/BindingGraph.MaybeBinding.html#binding--">binding</a></code>&nbsp;in interface&nbsp;<code><a href="../../dagger/model/BindingGraph.MaybeBinding.html" title="interface in dagger.model">BindingGraph.MaybeBinding</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="dependencies--">
@@ -212,7 +265,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>bindingElement</h4>
-<pre>java.util.Optional&lt;? extends javax.lang.model.element.Element&gt;&nbsp;bindingElement()</pre>
+<pre>java.util.Optional&lt;javax.lang.model.element.Element&gt;&nbsp;bindingElement()</pre>
 <div class="block">The <code>Element</code> that declares this binding. Absent for <a href="../../dagger/model/BindingKind.html" title="enum in dagger.model">binding
  kinds</a> that are not always declared by exactly one element.
 
@@ -234,6 +287,16 @@ var activeTableTab = "activeTableTab";
  have no <a href="../../dagger/model/Binding.html#bindingElement--"><code>binding element</code></a>.</div>
 </li>
 </ul>
+<a name="requiresModuleInstance--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>requiresModuleInstance</h4>
+<pre>boolean&nbsp;requiresModuleInstance()</pre>
+<div class="block">Returns <code>true</code> if using this binding requires an instance of the <a href="../../dagger/model/Binding.html#contributingModule--"><code>contributingModule()</code></a>.</div>
+</li>
+</ul>
 <a name="scope--">
 <!--   -->
 </a>
@@ -251,7 +314,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>isNullable</h4>
 <pre>boolean&nbsp;isNullable()</pre>
-<div class="block">Returns <code>true</code> if this binding may provide <code>null</code> instead of an instance of <a href="../../dagger/model/Binding.html#key--"><code>key()</code></a>. Nullable bindings cannot be requested from <a href="../../dagger/model/DependencyRequest.html#isNullable--">non-nullable dependency requests</a>.</div>
+<div class="block">Returns <code>true</code> if this binding may provide <code>null</code> instead of an instance of <a href="../../dagger/model/BindingGraph.MaybeBinding.html#key--"><code>BindingGraph.MaybeBinding.key()</code></a>. Nullable bindings cannot be requested from <a href="../../dagger/model/DependencyRequest.html#isNullable--">non-nullable dependency requests</a>.</div>
 </li>
 </ul>
 <a name="isProduction--">

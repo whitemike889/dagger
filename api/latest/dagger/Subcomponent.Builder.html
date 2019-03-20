@@ -43,7 +43,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../dagger/Subcomponent.html" title="annotation in dagger"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li>Next&nbsp;Class</li>
+<li><a href="../dagger/Subcomponent.Factory.html" title="annotation in dagger"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?dagger/Subcomponent.Builder.html" target="_top">Frames</a></li>
@@ -92,13 +92,18 @@
 <li class="blockList">
 <hr>
 <br>
-<pre>@Target(value=TYPE)
+<pre>@Retention(value=RUNTIME)
+ @Target(value=TYPE)
  @Documented
 public static @interface <span class="memberNameLabel">Subcomponent.Builder</span></pre>
-<div class="block">A builder for a subcomponent.  This follows all the rules of <a href="../dagger/Component.Builder.html" title="annotation in dagger"><code>Component.Builder</code></a>, except
- it must appear in classes annotated with <a href="../dagger/Subcomponent.html" title="annotation in dagger"><code>Subcomponent</code></a> instead of <code>Component</code>.
- Components can have methods that return a <a href="../dagger/Subcomponent.Builder.html" title="annotation in dagger"><code>Subcomponent.Builder</code></a>-annotated type,
- allowing the user to set modules on the subcomponent using their defined API.</div>
+<div class="block">A builder for a subcomponent.
+
+ <p>This follows all the rules of <a href="../dagger/Component.Builder.html" title="annotation in dagger"><code>Component.Builder</code></a>, except it must appear in classes
+ annotated with <a href="../dagger/Subcomponent.html" title="annotation in dagger"><code>Subcomponent</code></a> instead of <code>Component</code>.
+
+ <p>If a subcomponent defines a builder, its parent component(s) will have a binding for that
+ builder type, allowing an instance or <code>Provider</code> of that builder to be injected or
+ returned from a method on that component like any other binding.</div>
 </li>
 </ul>
 </div>
@@ -126,7 +131,7 @@ public static @interface <span class="memberNameLabel">Subcomponent.Builder</spa
 <div class="subNav">
 <ul class="navList">
 <li><a href="../dagger/Subcomponent.html" title="annotation in dagger"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li>Next&nbsp;Class</li>
+<li><a href="../dagger/Subcomponent.Factory.html" title="annotation in dagger"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?dagger/Subcomponent.Builder.html" target="_top">Frames</a></li>

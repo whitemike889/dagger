@@ -43,7 +43,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../dagger/producers/ProductionComponent.html" title="annotation in dagger.producers"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../dagger/producers/ProductionScope.html" title="annotation in dagger.producers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../dagger/producers/ProductionComponent.Factory.html" title="annotation in dagger.producers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?dagger/producers/ProductionComponent.Builder.html" target="_top">Frames</a></li>
@@ -92,38 +92,14 @@
 <li class="blockList">
 <hr>
 <br>
-<pre>@Target(value=TYPE)
+<pre>@Retention(value=RUNTIME)
+ @Target(value=TYPE)
  @Documented
 public static @interface <span class="memberNameLabel">ProductionComponent.Builder</span></pre>
-<div class="block">A builder for a component. Components may have a single nested static abstract class or
- interface annotated with <code>@ProductionComponent.Builder</code>. If they do, then the component's
- generated builder will match the API in the type.  Builders must follow some rules:
- <ul>
- <li> A single abstract method with no arguments must exist, and must return the component.
-      (This is typically the <code>build()</code> method.)
- <li> All other abstract methods must take a single argument and must return void,
-      the builder type, or a supertype of the builder.
- <li> Each component dependency <b>must</b> have an abstract setter method.
- <li> Each module dependency that Dagger can't instantiate itself (i.e., the module
-      doesn't have a visible no-args constructor) <b>must</b> have an abstract setter method.
-      Other module dependencies (ones that Dagger can instantiate) are allowed, but not
-      required.
- <li> Non-abstract methods are allowed, but ignored as far as validation and builder generation
-      are concerned.
- </ul>
+<div class="block">A builder for a production component.
 
- For example, this could be a valid <code>ProductionComponent</code> with a builder: <pre><code>
-  @ProductionComponent(modules = {BackendModule.class, FrontendModule.class})
- interface MyComponent {
-    ListenableFuture&lt;MyWidget&gt; myWidget();
-
-    @ProductionComponent.Builder
-   interface Builder {
-     MyComponent build();
-     Builder backendModule(BackendModule bm);
-     Builder frontendModule(FrontendModule fm);
-   }
- }</code></pre></div>
+ <p>This follows all the rules of <code>Component.Builder</code>, except it must appear in classes
+ annotated with <a href="../../dagger/producers/ProductionComponent.html" title="annotation in dagger.producers"><code>ProductionComponent</code></a> instead of <code>Component</code>.</div>
 </li>
 </ul>
 </div>
@@ -151,7 +127,7 @@ public static @interface <span class="memberNameLabel">ProductionComponent.Build
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../dagger/producers/ProductionComponent.html" title="annotation in dagger.producers"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../dagger/producers/ProductionScope.html" title="annotation in dagger.producers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../dagger/producers/ProductionComponent.Factory.html" title="annotation in dagger.producers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?dagger/producers/ProductionComponent.Builder.html" target="_top">Frames</a></li>

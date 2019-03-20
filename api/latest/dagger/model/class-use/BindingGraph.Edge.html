@@ -97,31 +97,46 @@
 <!--   -->
 </a>
 <h3>Uses of <a href="../../../dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a> in <a href="../../../dagger/model/package-summary.html">dagger.model</a></h3>
-<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
-<caption><span>Classes in <a href="../../../dagger/model/package-summary.html">dagger.model</a> that implement <a href="../../../dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a></span><span class="tabEnd">&nbsp;</span></caption>
+<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subinterfaces, and an explanation">
+<caption><span>Subinterfaces of <a href="../../../dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a> in <a href="../../../dagger/model/package-summary.html">dagger.model</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Class and Description</th>
+<th class="colLast" scope="col">Interface and Description</th>
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="class in dagger.model">BindingGraph.ChildFactoryMethodEdge</a></span></code>
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="interface in dagger.model">BindingGraph.ChildFactoryMethodEdge</a></span></code>
 <div class="block">An edge that represents a subcomponent factory method linking a parent component to a child
  subcomponent.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.DependencyEdge.html" title="class in dagger.model">BindingGraph.DependencyEdge</a></span></code>
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.DependencyEdge.html" title="interface in dagger.model">BindingGraph.DependencyEdge</a></span></code>
 <div class="block">An edge that represents a dependency on a binding.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.SubcomponentBuilderBindingEdge.html" title="class in dagger.model">BindingGraph.SubcomponentBuilderBindingEdge</a></span></code>
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.SubcomponentCreatorBindingEdge.html" title="interface in dagger.model">BindingGraph.SubcomponentCreatorBindingEdge</a></span></code>
 <div class="block">An edge that represents the link between a parent component and a child subcomponent implied by
- a subcomponent builder binding.</div>
+ a subcomponent creator (<a href="../../../dagger/Subcomponent.Builder.html" title="annotation in dagger">builder</a> or <a href="../../../dagger/Subcomponent.Factory.html" title="annotation in dagger">factory</a>) binding.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../dagger/model/package-summary.html">dagger.model</a> that return types with arguments of type <a href="../../../dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>abstract com.google.common.graph.ImmutableNetwork&lt;<a href="../../../dagger/model/BindingGraph.Node.html" title="interface in dagger.model">BindingGraph.Node</a>,<a href="../../../dagger/model/BindingGraph.Edge.html" title="interface in dagger.model">BindingGraph.Edge</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BindingGraph.</span><code><span class="memberNameLink"><a href="../../../dagger/model/BindingGraph.html#network--">network</a></span>()</code>
+<div class="block">Returns the graph in its <code>Network</code> representation.</div>
 </td>
 </tr>
 </tbody>

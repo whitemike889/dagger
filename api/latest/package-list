@@ -8,5 +8,4 @@ dagger.model
 dagger.multibindings
 dagger.producers
 dagger.producers.monitoring
-dagger.releasablereferences
 dagger.spi

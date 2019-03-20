@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,8 +48,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="class in dagger.model"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../dagger/model/BindingGraph.DependencyEdge.html" title="class in dagger.model"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="interface in dagger.model"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../dagger/model/BindingGraph.DependencyEdge.html" title="interface in dagger.model"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?dagger/model/BindingGraph.ComponentNode.html" target="_top">Frames</a></li>
@@ -110,7 +110,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public static interface <span class="typeNameLabel">BindingGraph.ComponentNode</span>
 extends <a href="../../dagger/model/BindingGraph.Node.html" title="interface in dagger.model">BindingGraph.Node</a></pre>
-<div class="block">A <b>component node</b> in the graph. Every entry point <a href="../../dagger/model/BindingGraph.DependencyEdge.html" title="class in dagger.model">dependency
+<div class="block">A <b>component node</b> in the graph. Every entry point <a href="../../dagger/model/BindingGraph.DependencyEdge.html" title="interface in dagger.model">dependency
  edge</a>'s source node is a component node for the component containing the entry point.</div>
 </li>
 </ul>
@@ -143,6 +143,20 @@ extends <a href="../../dagger/model/BindingGraph.Node.html" title="interface in 
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/BindingGraph.ComponentNode.html#isRealComponent--">isRealComponent</a></span>()</code>
+<div class="block">Returns <code>true</code> if the component is a real component, or <code>false</code> if it is a
+ fictional component based on a module.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/BindingGraph.ComponentNode.html#isSubcomponent--">isSubcomponent</a></span>()</code>
+<div class="block">Returns <code>true</code> if the component is a <code>@Subcomponent</code> or
+ <code>@ProductionSubcomponent</code>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>com.google.common.collect.ImmutableSet&lt;<a href="../../dagger/model/Scope.html" title="class in dagger.model">Scope</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/model/BindingGraph.ComponentNode.html#scopes--">scopes</a></span>()</code>
 <div class="block">The scopes declared on this component.</div>
@@ -175,6 +189,28 @@ extends <a href="../../dagger/model/BindingGraph.Node.html" title="interface in 
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../dagger/model/BindingGraph.Node.html#componentPath--">componentPath</a></code>&nbsp;in interface&nbsp;<code><a href="../../dagger/model/BindingGraph.Node.html" title="interface in dagger.model">BindingGraph.Node</a></code></dd>
 </dl>
+</li>
+</ul>
+<a name="isSubcomponent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSubcomponent</h4>
+<pre>boolean&nbsp;isSubcomponent()</pre>
+<div class="block">Returns <code>true</code> if the component is a <code>@Subcomponent</code> or
+ <code>@ProductionSubcomponent</code>.</div>
+</li>
+</ul>
+<a name="isRealComponent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRealComponent</h4>
+<pre>boolean&nbsp;isRealComponent()</pre>
+<div class="block">Returns <code>true</code> if the component is a real component, or <code>false</code> if it is a
+ fictional component based on a module.</div>
 </li>
 </ul>
 <a name="entryPoints--">
@@ -225,8 +261,8 @@ extends <a href="../../dagger/model/BindingGraph.Node.html" title="interface in 
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="class in dagger.model"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../dagger/model/BindingGraph.DependencyEdge.html" title="class in dagger.model"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../dagger/model/BindingGraph.ChildFactoryMethodEdge.html" title="interface in dagger.model"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../dagger/model/BindingGraph.DependencyEdge.html" title="interface in dagger.model"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?dagger/model/BindingGraph.ComponentNode.html" target="_top">Frames</a></li>

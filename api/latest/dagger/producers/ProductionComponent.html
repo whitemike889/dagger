@@ -92,29 +92,30 @@
 <li class="blockList">
 <hr>
 <br>
-<pre>@Documented
+<pre>@Retention(value=RUNTIME)
+ @Documented
  @Target(value=TYPE)
  @Beta
 public @interface <span class="memberNameLabel">ProductionComponent</span></pre>
 <div class="block">Annotates an interface or abstract class for which a fully-formed, dependency-injected
  implementation is to be generated from a set of <a href="../../dagger/producers/ProductionComponent.html#modules--">modules</a>. The generated
  class will have the name of the type annotated with <code>@ProductionComponent</code> prepended with
- <code>Dagger</code>.  For example, <code>@ProductionComponent interface MyComponent {...}</code> will
+ <code>Dagger</code>. For example, <code>@ProductionComponent interface MyComponent {...}</code> will
  produce an implementation named <code>DaggerMyComponent</code>.
 
  <p>Each <a href="../../dagger/producers/Produces.html" title="annotation in dagger.producers"><code>Produces</code></a> method that contributes to the component will be called at most once per
- component instance, no matter how many times that binding is used as a dependency.
- TODO(beder): Decide on how scope works for producers.
+ component instance, no matter how many times that binding is used as a dependency. TODO(beder):
+ Decide on how scope works for producers.
 
  <h2>Component methods</h2>
 
  <p>Every type annotated with <code>@ProductionComponent</code> must contain at least one abstract
  component method. Component methods must represent <a href="../../dagger/producers/Producer.html" title="interface in dagger.producers">production</a>.
 
- Production methods have no arguments and return either a <code>ListenableFuture</code> or
- <a href="../../dagger/producers/Producer.html" title="interface in dagger.producers"><code>Producer</code></a> of a type that is <code>injected</code>, <a href="../../dagger/Provides.html" title="annotation in dagger"><code>provided</code></a>, or
- <a href="../../dagger/producers/Produces.html" title="annotation in dagger.producers"><code>produced</code></a>. Each may have a <code>Qualifier</code> annotation as well. The following
- are all valid production method declarations: <pre><code>
+ <p>Production methods have no arguments and return either a <code>ListenableFuture</code> or <a href="../../dagger/producers/Producer.html" title="interface in dagger.producers"><code>Producer</code></a> of a type that is <code>injected</code>, <a href="../../dagger/Provides.html" title="annotation in dagger"><code>provided</code></a>, or <a href="../../dagger/producers/Produces.html" title="annotation in dagger.producers"><code>produced</code></a>. Each may have a <code>Qualifier</code> annotation as well. The following are all
+ valid production method declarations:
+
+ <pre><code>
     ListenableFuture&lt;SomeType&gt; getSomeType();
     Producer&lt;Set&lt;SomeType&gt;&gt; getSomeTypes();
     @Response ListenableFuture&lt;Html&gt; getResponse();
@@ -128,9 +129,7 @@ public @interface <span class="memberNameLabel">ProductionComponent</span></pre>
  and if the downstream producer injects a <code>Produced&lt;T&gt;</code>, then the downstream producer will
  be run with the exception stored in the <code>Produced&lt;T&gt;</code>.
 
- <p>If a non-execution exception is thrown (e.g., an <code>InterruptedException</code> or
- <code>CancellationException</code>), then exception is handled as in
- <code>Futures.transform(com.google.common.util.concurrent.ListenableFuture&lt;I&gt;, com.google.common.base.Function&lt;? super I, ? extends O&gt;)</code>.
+ <p>If a non-execution exception is thrown (e.g., an <code>InterruptedException</code> or <code>CancellationException</code>), then exception is handled as in <code>Futures.transform(com.google.common.util.concurrent.ListenableFuture&lt;I&gt;, com.google.common.base.Function&lt;? super I, ? extends O&gt;)</code>.
  <!-- TODO(beder): Explain this more thoroughly, and update the javadocs of those utilities. -->
 
  <h2>Executor</h2>
