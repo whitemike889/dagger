@@ -129,7 +129,7 @@ public @interface <span class="memberNameLabel">ProductionComponent</span></pre>
  and if the downstream producer injects a <code>Produced&lt;T&gt;</code>, then the downstream producer will
  be run with the exception stored in the <code>Produced&lt;T&gt;</code>.
 
- <p>If a non-execution exception is thrown (e.g., an <code>InterruptedException</code> or <code>CancellationException</code>), then exception is handled as in <code>Futures.transform(com.google.common.util.concurrent.ListenableFuture&lt;I&gt;, com.google.common.base.Function&lt;? super I, ? extends O&gt;)</code>.
+ <p>If a non-execution exception is thrown (e.g., an <code>InterruptedException</code> or <code>CancellationException</code>), then exception is handled as in <code>Futures.transform(com.google.common.util.concurrent.ListenableFuture&lt;I&gt;, com.google.common.base.Function&lt;? super I, ? extends O&gt;, java.util.concurrent.Executor)</code>.
  <!-- TODO(beder): Explain this more thoroughly, and update the javadocs of those utilities. -->
 
  <h2>Executor</h2>
