@@ -321,8 +321,8 @@ extends java.lang.Object</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
 <div class="block"><span class="deprecationComment">use <a href="../../dagger/model/BindingGraph.html#isFullBindingGraph--"><code>isFullBindingGraph()</code></a> to tell if this is a full binding graph, or
      <a href="../../dagger/model/BindingGraph.ComponentNode.html#isRealComponent--"><code>rootComponentNode().isRealComponent()</code></a> to tell if
-     the root component node is really a component or derived from a module. Dagger will soon
-     generate full binding graphs for components and subcomponents as well as modules.</span></div>
+     the root component node is really a component or derived from a module. Dagger can generate
+     full binding graphs for components and subcomponents as well as modules.</span></div>
 </div>
 </td>
 </tr>
@@ -431,14 +431,10 @@ extends java.lang.Object</pre>
 public final&nbsp;boolean&nbsp;isModuleBindingGraph()</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">use <a href="../../dagger/model/BindingGraph.html#isFullBindingGraph--"><code>isFullBindingGraph()</code></a> to tell if this is a full binding graph, or
      <a href="../../dagger/model/BindingGraph.ComponentNode.html#isRealComponent--"><code>rootComponentNode().isRealComponent()</code></a> to tell if
-     the root component node is really a component or derived from a module. Dagger will soon
-     generate full binding graphs for components and subcomponents as well as modules.</span></div>
-<div class="block">Returns <code>true</code> if this graph was constructed from a module for module binding validation.</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="https://google.github.io/dagger/compiler-options#module-binding-validation">Module binding
-     validation</a></dd>
-</dl>
+     the root component node is really a component or derived from a module. Dagger can generate
+     full binding graphs for components and subcomponents as well as modules.</span></div>
+<div class="block">Returns <code>true</code> if this graph was constructed from a module for full binding graph
+ validation.</div>
 </li>
 </ul>
 <a name="isFullBindingGraph--">
@@ -451,6 +447,11 @@ public final&nbsp;boolean&nbsp;isModuleBindingGraph()</pre>
 <div class="block">Returns <code>true</code> if this is a full binding graph, which contains all bindings installed in
  the component, or <code>false</code> if it is a reachable binding graph, which contains only
  bindings that are reachable from at least one <a href="../../dagger/model/BindingGraph.html#entryPointEdges--">entry point</a>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://google.github.io/dagger/compiler-options#full-binding-graph-validation">Full binding
+     graph validation</a></dd>
+</dl>
 </li>
 </ul>
 <a name="isPartialBindingGraph--">
