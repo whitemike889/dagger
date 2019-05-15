@@ -133,8 +133,8 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/android/support/AndroidSupportInjection.html#inject-android.support.v4.app.Fragment-">inject</a></span>(android.support.v4.app.Fragment&nbsp;fragment)</code>
-<div class="block">Injects <code>fragment</code> if an associated <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> implementation
- can be found, otherwise throws an <code>IllegalArgumentException</code>.</div>
+<div class="block">Injects <code>fragment</code> if an associated <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> implementation can be found,
+ otherwise throws an <code>IllegalArgumentException</code>.</div>
 </td>
 </tr>
 </table>
@@ -166,24 +166,26 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>inject</h4>
 <pre>public static&nbsp;void&nbsp;inject(android.support.v4.app.Fragment&nbsp;fragment)</pre>
-<div class="block">Injects <code>fragment</code> if an associated <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> implementation
- can be found, otherwise throws an <code>IllegalArgumentException</code>.
+<div class="block">Injects <code>fragment</code> if an associated <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> implementation can be found,
+ otherwise throws an <code>IllegalArgumentException</code>.
 
- <p>Uses the following algorithm to find the appropriate <code>AndroidInjector&lt;Fragment&gt;</code> to
- use to inject <code>fragment</code>:
+ <p>Uses the following algorithm to find the appropriate <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> to use to
+ inject <code>fragment</code>:
 
  <ol>
-   <li>Walks the parent-fragment hierarchy to find the a fragment that implements <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>, and if none do
+   <li>Walks the parent-fragment hierarchy to find a fragment that implements <a href="../../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>, and if none do
    <li>Uses the <code>fragment</code>'s <code>activity</code> if it implements
-       <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>, and if not
-   <li>Uses the <code>Application</code> if it implements <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>.
+       <a href="../../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>, and if not
+   <li>Uses the <code>Application</code> if it implements <a href="../../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>
+       <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>.
  </ol>
 
- If none of them implement <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>, a <code>IllegalArgumentException</code> is thrown.</div>
+ If none of them implement <a href="../../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>, a
+ <code>IllegalArgumentException</code> is thrown.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - if no parent fragment, activity, or application implements
-     <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>.</dd>
+     <a href="../../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support"><code>HasSupportFragmentInjector</code></a>.</dd>
 </dl>
 </li>
 </ul>

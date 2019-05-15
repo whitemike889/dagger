@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -128,14 +128,15 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, <a href="../../../dagger/android/HasActivityInjector.html" title="interface in dagger.android">HasActivityInjector</a>, <a href="../../../dagger/android/HasBroadcastReceiverInjector.html" title="interface in dagger.android">HasBroadcastReceiverInjector</a>, <a href="../../../dagger/android/HasContentProviderInjector.html" title="interface in dagger.android">HasContentProviderInjector</a>, <a href="../../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android">HasFragmentInjector</a>, <a href="../../../dagger/android/HasServiceInjector.html" title="interface in dagger.android">HasServiceInjector</a>, <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support">HasSupportFragmentInjector</a></dd>
+<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, <a href="../../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android">HasAndroidInjector</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public abstract class <span class="typeNameLabel">DaggerApplication</span>
-extends <a href="../../../dagger/android/DaggerApplication.html" title="class in dagger.android">DaggerApplication</a>
-implements <a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support">HasSupportFragmentInjector</a></pre>
-<div class="block">An <code>Application</code> that injects its members and can be used to inject <code>Activity</code>s, framework fragments, support fragments, <code>Service</code>s, <code>BroadcastReceiver</code>s, and <code>ContentProvider</code>s attached to it.</div>
+extends <a href="../../../dagger/android/DaggerApplication.html" title="class in dagger.android">DaggerApplication</a></pre>
+<div class="block">An <code>Application</code> that injects its members and can be used to inject classes that the
+ Android framework instantiates. Injection is performed in <a href="../../../dagger/android/DaggerApplication.html#onCreate--"><code>DaggerApplication.onCreate()</code></a> or the first call
+ to <code>AndroidInjection#inject(ContentProvider)</code>, whichever happens first.</div>
 </li>
 </ul>
 </div>
@@ -203,7 +204,7 @@ implements <a href="../../../dagger/android/support/HasSupportFragmentInjector.h
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -214,19 +215,13 @@ implements <a href="../../../dagger/android/support/HasSupportFragmentInjector.h
 <div class="block">Implementations should return an <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> for the concrete <a href="../../../dagger/android/DaggerApplication.html" title="class in dagger.android"><code>DaggerApplication</code></a>.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../dagger/android/DispatchingAndroidInjector.html" title="class in dagger.android">DispatchingAndroidInjector</a>&lt;android.support.v4.app.Fragment&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../dagger/android/support/DaggerApplication.html#supportFragmentInjector--">supportFragmentInjector</a></span>()</code>
-<div class="block">Returns an <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>Fragment</code>s.</div>
-</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.dagger.android.DaggerApplication">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;dagger.android.<a href="../../../dagger/android/DaggerApplication.html" title="class in dagger.android">DaggerApplication</a></h3>
-<code><a href="../../../dagger/android/DaggerApplication.html#activityInjector--">activityInjector</a>, <a href="../../../dagger/android/DaggerApplication.html#broadcastReceiverInjector--">broadcastReceiverInjector</a>, <a href="../../../dagger/android/DaggerApplication.html#contentProviderInjector--">contentProviderInjector</a>, <a href="../../../dagger/android/DaggerApplication.html#fragmentInjector--">fragmentInjector</a>, <a href="../../../dagger/android/DaggerApplication.html#onCreate--">onCreate</a>, <a href="../../../dagger/android/DaggerApplication.html#serviceInjector--">serviceInjector</a></code></li>
+<code><a href="../../../dagger/android/DaggerApplication.html#androidInjector--">androidInjector</a>, <a href="../../../dagger/android/DaggerApplication.html#onCreate--">onCreate</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.android.app.Application">
@@ -290,7 +285,7 @@ implements <a href="../../../dagger/android/support/HasSupportFragmentInjector.h
 <a name="applicationInjector--">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>applicationInjector</h4>
 <pre>protected abstract&nbsp;<a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;? extends <a href="../../../dagger/android/support/DaggerApplication.html" title="class in dagger.android.support">DaggerApplication</a>&gt;&nbsp;applicationInjector()</pre>
@@ -299,21 +294,6 @@ implements <a href="../../../dagger/android/support/HasSupportFragmentInjector.h
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../dagger/android/DaggerApplication.html#applicationInjector--">applicationInjector</a></code>&nbsp;in class&nbsp;<code><a href="../../../dagger/android/DaggerApplication.html" title="class in dagger.android">DaggerApplication</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="supportFragmentInjector--">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>supportFragmentInjector</h4>
-<pre>public&nbsp;<a href="../../../dagger/android/DispatchingAndroidInjector.html" title="class in dagger.android">DispatchingAndroidInjector</a>&lt;android.support.v4.app.Fragment&gt;&nbsp;supportFragmentInjector()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../dagger/android/support/HasSupportFragmentInjector.html#supportFragmentInjector--">HasSupportFragmentInjector</a></code></span></div>
-<div class="block">Returns an <a href="../../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>Fragment</code>s.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../dagger/android/support/HasSupportFragmentInjector.html#supportFragmentInjector--">supportFragmentInjector</a></code>&nbsp;in interface&nbsp;<code><a href="../../../dagger/android/support/HasSupportFragmentInjector.html" title="interface in dagger.android.support">HasSupportFragmentInjector</a></code></dd>
 </dl>
 </li>
 </ul>

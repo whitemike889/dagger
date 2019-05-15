@@ -92,7 +92,8 @@
 <li class="blockList">
 <hr>
 <br>
-<pre>@Scope
+<pre>@Retention(value=RUNTIME)
+ @Scope
  @Documented
 public @interface <span class="memberNameLabel">CallScoped</span></pre>
 <div class="block">A scope that lasts as long as a single gRPC <code>ServerCall</code>.</div>

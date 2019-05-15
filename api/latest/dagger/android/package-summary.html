@@ -107,24 +107,30 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android">HasAndroidInjector</a></td>
+<td class="colLast">
+<div class="block">Provides an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/HasBroadcastReceiverInjector.html" title="interface in dagger.android">HasBroadcastReceiverInjector</a></td>
 <td class="colLast">
 <div class="block">Provides an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>BroadcastReceiver</code>s.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/android/HasContentProviderInjector.html" title="interface in dagger.android">HasContentProviderInjector</a></td>
 <td class="colLast">
 <div class="block">Provides an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>ContentProvider</code>s.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android">HasFragmentInjector</a></td>
 <td class="colLast">
 <div class="block">Provides an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>Fragment</code>s.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../dagger/android/HasServiceInjector.html" title="interface in dagger.android">HasServiceInjector</a></td>
 <td class="colLast">
 <div class="block">Provides an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>Service</code>s.</div>
@@ -169,9 +175,8 @@
 <tr class="altColor">
 <td class="colFirst"><a href="../../dagger/android/DaggerApplication.html" title="class in dagger.android">DaggerApplication</a></td>
 <td class="colLast">
-<div class="block">An <code>Application</code> that injects its members and can be used to inject <code>Activity</code>s,
- <code>Fragment</code>s, <code>Service</code>s, <code>BroadcastReceiver</code>s and <code>ContentProvider</code>s
- attached to it.</div>
+<div class="block">An <code>Application</code> that injects its members and can be used to inject objects that the
+ Android framework instantiates, such as Activitys, Fragments, or Services.</div>
 </td>
 </tr>
 <tr class="rowColor">

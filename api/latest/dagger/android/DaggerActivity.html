@@ -128,14 +128,14 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, android.view.KeyEvent.Callback, android.view.LayoutInflater.Factory, android.view.LayoutInflater.Factory2, android.view.View.OnCreateContextMenuListener, android.view.Window.Callback, <a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android">HasFragmentInjector</a></dd>
+<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, android.view.KeyEvent.Callback, android.view.LayoutInflater.Factory, android.view.LayoutInflater.Factory2, android.view.View.OnCreateContextMenuListener, android.view.Window.Callback, <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android">HasAndroidInjector</a></dd>
 </dl>
 <hr>
 <br>
 <pre>@Beta
 public abstract class <span class="typeNameLabel">DaggerActivity</span>
 extends android.app.Activity
-implements <a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android">HasFragmentInjector</a></pre>
+implements <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android">HasAndroidInjector</a></pre>
 <div class="block">An <code>Activity</code> that injects its members in <a href="../../dagger/android/DaggerActivity.html#onCreate-android.os.Bundle-"><code>onCreate(Bundle)</code></a> and can be used to
  inject <code>Fragment</code>s attached to it.</div>
 </li>
@@ -203,9 +203,9 @@ implements <a href="../../dagger/android/HasFragmentInjector.html" title="interf
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;android.app.Fragment&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/android/DaggerActivity.html#fragmentInjector--">fragmentInjector</a></span>()</code>
-<div class="block">Returns an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>Fragment</code>s.</div>
+<td class="colFirst"><code><a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;java.lang.Object&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../dagger/android/DaggerActivity.html#androidInjector--">androidInjector</a></span>()</code>
+<div class="block">Returns an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -300,18 +300,18 @@ implements <a href="../../dagger/android/HasFragmentInjector.html" title="interf
 </dl>
 </li>
 </ul>
-<a name="fragmentInjector--">
+<a name="androidInjector--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>fragmentInjector</h4>
-<pre>public&nbsp;<a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;android.app.Fragment&gt;&nbsp;fragmentInjector()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../dagger/android/HasFragmentInjector.html#fragmentInjector--">HasFragmentInjector</a></code></span></div>
-<div class="block">Returns an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> of <code>Fragment</code>s.</div>
+<h4>androidInjector</h4>
+<pre>public&nbsp;<a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android">AndroidInjector</a>&lt;java.lang.Object&gt;&nbsp;androidInjector()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../dagger/android/HasAndroidInjector.html#androidInjector--">HasAndroidInjector</a></code></span></div>
+<div class="block">Returns an <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../dagger/android/HasFragmentInjector.html#fragmentInjector--">fragmentInjector</a></code>&nbsp;in interface&nbsp;<code><a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android">HasFragmentInjector</a></code></dd>
+<dd><code><a href="../../dagger/android/HasAndroidInjector.html#androidInjector--">androidInjector</a></code>&nbsp;in interface&nbsp;<code><a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android">HasAndroidInjector</a></code></dd>
 </dl>
 </li>
 </ul>
