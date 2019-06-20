@@ -108,7 +108,7 @@ The classes in [`dagger.android`] offer one approach to simplify this pattern.
       @IntoMap
       @ClassKey(YourActivity.class)
       abstract AndroidInjector.Factory<?>
-          bindYourActivityInjectorFactory(YourActivitySubcomponent.Factory factory);
+          bindYourAndroidInjectorFactory(YourActivitySubcomponent.Factory factory);
     }
 
     @Component(modules = {..., YourActivityModule.class})
@@ -126,17 +126,17 @@ The classes in [`dagger.android`] offer one approach to simplify this pattern.
     ```java
     @ActivityScope
     @ContributesAndroidInjector(modules = { /* modules to install into the subcomponent */ })
-    abstract YourActivity contributeYourActivityInjector();
+    abstract YourActivity contributeYourAndroidInjector();
     ```
 
-4.  Next, make your `Application` implement [`HasActivityInjector`]
+4.  Next, make your `Application` implement [`HasAndroidInjector`]
     and `@Inject` a
-    [`DispatchingAndroidInjector<Activity>`][DispatchingAndroidInjector] to
-    return from the `activityInjector()` method:
+    [`DispatchingAndroidInjector<Object>`][DispatchingAndroidInjector] to
+    return from the `androidInjector()` method:
 
     ```java
-    public class YourApplication extends Application implements HasActivityInjector {
-      @Inject DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
+    public class YourApplication extends Application implements HasAndroidInjector {
+      @Inject DispatchingAndroidInjector<Object> dispatchingAndroidInjector;
 
       @Override
       public void onCreate() {
@@ -146,8 +146,8 @@ The classes in [`dagger.android`] offer one approach to simplify this pattern.
       }
 
       @Override
-      public AndroidInjector<Activity> activityInjector() {
-        return dispatchingActivityInjector;
+      public AndroidInjector<Object> androidInjector() {
+        return dispatchingAndroidInjector;
       }
     }
     ```
@@ -169,7 +169,7 @@ The classes in [`dagger.android`] offer one approach to simplify this pattern.
 
 #### How did that work?
 
-`AndroidInjection.inject()` gets a `DispatchingAndroidInjector<Activity>` from
+`AndroidInjection.inject()` gets a `DispatchingAndroidInjector<Object>` from
 the `Application` and passes your activity to `inject(Activity)`. The
 `DispatchingAndroidInjector` looks up the `AndroidInjector.Factory` for your
 activity’s class (which is `YourActivitySubcomponent.Factory`), creates the
@@ -179,8 +179,7 @@ activity to `inject(YourActivity)`.
 ### Injecting `Fragment` objects
 
 Injecting a `Fragment` is just as simple as injecting an `Activity`. Define your
-subcomponent in the same way and replace `HasActivityInjector` with
-[`HasFragmentInjector`].
+subcomponent in the same way.
 
 Instead of injecting in `onCreate()` as is done for `Activity`
 types, [inject `Fragment`s to in `onAttach()`](#when-to-inject).
@@ -190,14 +189,14 @@ install modules for `Fragment`s. You can make your `Fragment` component a
 subcomponent of another `Fragment` component, an `Activity` component, or the
 `Application` component — it all depends on which other bindings your `Fragment`
 requires. After deciding on the component location, make the corresponding type
-implement `HasFragmentInjector`. For example, if your `Fragment`
+implement `HasAndroidInjector` (if it doesn't already). For example, if your `Fragment`
 needs bindings from `YourActivitySubcomponent`, your code will look something
 like this:
 
 ```java
 public class YourActivity extends Activity
-    implements HasFragmentInjector {
-  @Inject DispatchingAndroidInjector<Fragment> fragmentInjector;
+    implements HasAndroidInjector {
+  @Inject DispatchingAndroidInjector<Object> androidInjector;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -207,8 +206,8 @@ public class YourActivity extends Activity
   }
 
   @Override
-  public AndroidInjector<Fragment> fragmentInjector() {
-    return fragmentInjector;
+  public AndroidInjector<Object> androidInjector() {
+    return androidInjector;
   }
 }
 
@@ -246,14 +245,13 @@ public interface YourActivityOrYourApplicationComponent { ... }
 
 Because `DispatchingAndroidInjector` looks up the appropriate
 `AndroidInjector.Factory` by the class at runtime, a base class can implement
-`HasActivityInjector`/`HasFragmentInjector`/etc as well as
-call `AndroidInjection.inject()`. All each subclass needs to do is bind a
-corresponding `@Subcomponent`. Dagger provides a few base types that do this,
-such as [`DaggerActivity`] and [`DaggerFragment`], if you don't have a
-complicated class hierarchy. Dagger also provides a [`DaggerApplication`] for
-the same purpose — all you need to do is to extend it and override the
-`applicationInjector()` method to return the component that should inject the
-`Application`.
+`HasAndroidInjector` as well as call `AndroidInjection.inject()`. All each
+subclass needs to do is bind a corresponding `@Subcomponent`. Dagger provides a
+few base types that do this, such as [`DaggerActivity`] and [`DaggerFragment`],
+if you don't have a complicated class hierarchy. Dagger also provides a
+[`DaggerApplication`] for the same purpose — all you need to do is to extend it
+and override the `applicationInjector()` method to return the component that
+should inject the `Application`.
 
 The following types are also included:
   - [`DaggerService`] and [`DaggerIntentService`]
@@ -339,7 +337,6 @@ method.
 [DispatchingAndroidInjector]: https://dagger.dev/api/latest/dagger/android/DispatchingAndroidInjector.html
 [effective-java]: https://books.google.com/books?id=ka2VUBqHiWkC
 [ErrorProne]: https://github.com/google/error-prone
-[`HasActivityInjector`]: https://dagger.dev/api/latest/dagger/android/HasActivityInjector.html
-[`HasFragmentInjector`]: https://dagger.dev/api/latest/dagger/android/HasFragmentInjector.html
+[`HasAndroidInjector`]: https://dagger.dev/api/latest/dagger/android/HasAndroidInjector.html
 [ProGuard]: http://proguard.sourceforge.net/
 
