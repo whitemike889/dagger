@@ -208,7 +208,7 @@ final class DepositCommand extends BigDecimalCommand {
 > *   **`@BindsInstance`** parameters let you make arbitrary objects requestable
 >     by other binding methods in the component.
 
-[Previous](maintaining-state.md) · [Next](withdraw-command.md)
+[Previous](09-maintaining-state) · [Next](11-withdraw-command)
 {@paragraph style="text-align: center"}
 
 [BigDecimalCommand]: https://github.com/google/dagger/tree/master/java/dagger/example/atm/BigDecimalCommand.java

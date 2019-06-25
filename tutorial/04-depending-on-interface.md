@@ -81,5 +81,5 @@ kind of `Command`.
 >     type that Dagger doesn't yet know how to construct (the method's return
 >     type).
 
-[Previous](initial-dagger.md) · [Next](abstraction-for-output.md)
+[Previous](03-first-command) · [Next](05-abstraction-for-output)
 {@paragraph style="text-align: center"}

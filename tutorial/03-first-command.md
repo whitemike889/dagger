@@ -70,5 +70,5 @@ the application will respond `world!`. We're making progress!
 >         constructor. These different uses of the word "injects" can get
 >         confusing, so we're using the more explicit terms in this tutorial.
 
-[Previous](initial-dagger.md) · [Next](depending-on-interface.md)
+[Previous](02-initial-dagger) · [Next](04-depending-on-interface)
 {@paragraph style="text-align: center"}

@@ -20,5 +20,5 @@ ideas introduced in the section.
 *   Further reading includes:
     *   Javadoc
 
-[Next](setup.md)
+[Next](01-setup)
 {@paragraph style="text-align: center"}

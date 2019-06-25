@@ -88,5 +88,5 @@ class CommandLineAtm {
 Congratulations! We now have a working command line ATM! It doesn't do anything
 just yet, but very soon we'll change that.
 
-[Previous](index.md) · [Next](initial-dagger.md)
+[Previous](index) · [Next](02-initial-dagger)
 {@paragraph style="text-align: center"}

@@ -78,5 +78,5 @@ different logic in both cases!
 >     whether Dagger knows how to create an instance of `ReturnType`, and it can
 >     be present in a subcomponent but absent in its parent.
 
-[Previous](max-withdrawal-across-commands.md)
+[Previous](13-max-withdrawal-across-commands)
 {@paragraph style="text-align: center"}

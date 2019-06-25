@@ -84,5 +84,5 @@ Try rerunning again. Now the login and deposit commands share a single
 > *   It's not yet clear why you have to annotate the component with
 >     `@Singleton` as well, but it will become clearer later.
 
-[Previous](user-specific-types.md) · [Next](deposit-after-login.md)
+[Previous](08-user-specific-types) · [Next](10-deposit-after-login)
 {@paragraph style="text-align: center"}

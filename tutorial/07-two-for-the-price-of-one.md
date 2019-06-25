@@ -72,5 +72,5 @@ both modules.
 >     called "multibindings", where a collection contains elements from several
 >     different binding methods.
 
-[Previous](new-command.md) · [Next](user-specific-types.md)
+[Previous](06-new-command) · [Next](08-user-specific-types)
 {@paragraph style="text-align: center"}

@@ -48,7 +48,7 @@ _declarative_ change, we were able to change what `Command` was received by
 approach, you can write many different versions of your application and reuse
 code without massive changes.
 
-[Previous](abstraction-for-output.md) · [Next](two-for-the-price-of-one.md)
+[Previous](05-abstraction-for-output) · [Next](07-two-for-the-price-of-one)
 {@paragraph style="text-align: center"}
 
 [SingleArgCommand]: https://github.com/google/dagger/tree/master/java/dagger/example/atm/SingleArgCommand.java

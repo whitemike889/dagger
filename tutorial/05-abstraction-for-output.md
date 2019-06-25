@@ -90,5 +90,5 @@ it's now easy to write unit tests for our command without it actually writing to
 >         detail. Going forward, we'll use the term "provided" instead of
 >         "created", as that is more accurate for what is happening.
 
-[Previous](depending-on-interface.md) · [Next](new-command.md)
+[Previous](04-depending-on-interface) · [Next](06-new-command)
 {@paragraph style="text-align: center"}

@@ -65,5 +65,5 @@ application! Run the application again to see it in action.
 > *   **`@Inject`** on a constructor tells Dagger how to instantiate that class.
 >     We'll see more shortly.
 
-[Previous](setup.md) · [Next](first-command.md)
+[Previous](01-setup) · [Next](03-first-command)
 {@paragraph style="text-align: center"}
