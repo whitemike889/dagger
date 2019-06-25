@@ -35,7 +35,7 @@ public Status handleInput(List<String> input) {
 ```
 
 `Outputter` is an `interface`. We could write an implementation of it, give that
-class an `@Inject` constructor, and then use `@Binds` to bind `Outputter` to
+class an [`@Inject`] constructor, and then use [`@Binds`] to bind `Outputter` to
 that implementation. But `Outputter` is very simple… so simple that we could
 even implement it as a lambda or method reference. So instead of doing all that,
 let's write a `static` method that just creates and returns an instance of
@@ -51,10 +51,10 @@ abstract class SystemOutModule {
 }
 ```
 
-Here we've created another `@Module`, but instead of a `@Binds` method we have a
-`@Provides` method. A `@Provides` method works a lot like an `@Inject`
-constructor: here it tells Dagger that when it needs an instance of `Outputter`,
-it should _call_ `SystemOutModule.textOutputter()` to get one.
+Here we've created another [`@Module`], but instead of a [`@Binds`] method we
+have a [`@Provides`] method. A [`@Provides`] method works a lot like an
+[`@Inject`] constructor: here it tells Dagger that when it needs an instance of
+`Outputter`, it should _call_ `SystemOutModule.textOutputter()` to get one.
 
 Again, we'll need to add our new module to our component definition to tell
 Dagger that it should use that module for our application:
@@ -76,12 +76,12 @@ it's now easy to write unit tests for our command without it actually writing to
 
 > **CONCEPTS**
 >
-> *   **`@Provides`** methods are concrete methods in a module that tell Dagger
->     that when something requests an instance of the type the method returns,
->     it should call that method to get an instance. Like `@Inject`
+> *   **[`@Provides`]** methods are concrete methods in a module that tell
+>     Dagger that when something requests an instance of the type the method
+>     returns, it should call that method to get an instance. Like [`@Inject`]
 >     constructors, they can have parameters: those parameters are their
 >     dependencies.
-> *   `@Provides` methods can contain arbitrary code as long as they return an
+> *   [`@Provides`] methods can contain arbitrary code as long as they return an
 >     instance of the provided type. They need-not create a new instance on each
 >     invocation.
 >     *   This highlights an important aspect of Dagger (and dependency
@@ -92,3 +92,8 @@ it's now easy to write unit tests for our command without it actually writing to
 
 [Previous](04-depending-on-interface) · [Next](06-new-command)
 {@paragraph style="text-align: center"}
+
+[`@Binds`]: https://dagger.dev/api/latest/dagger/Binds.html
+[`@Inject`]: http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html
+[`@Module`]: https://dagger.dev/api/latest/dagger/Module.html
+[`@Provides`]: https://dagger.dev/api/latest/dagger/Provides.html

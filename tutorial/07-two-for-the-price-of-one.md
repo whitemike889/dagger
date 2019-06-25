@@ -9,7 +9,7 @@ Dagger will report an error. The two modules conflict—they each tell Dagger ho
 to create a single `Command`, and Dagger doesn't know which should win.
 
 We want `CommandRouter` to depend on _multiple_ commands instead of just one.
-Since our `CommandRouter` wants a map of commands, we'll use `@IntoMap` to map
+Since our `CommandRouter` wants a map of commands, we'll use [`@IntoMap`] to map
 each `Command` our application uses to the prefix of the command:
 
 ```java
@@ -32,7 +32,7 @@ abstract class HelloWorldModule {
 }
 ```
 
-The `@StringKey` annotation, combined with `@IntoMap`, tells Dagger how to
+The [`@StringKey`] annotation, combined with [`@IntoMap`], tells Dagger how to
 populate a `Map<String, Command>`. Note that our `Command` interface no longer
 needs a `key()` method because we're telling Dagger what the key is directly.
 
@@ -56,21 +56,29 @@ final class CommandRouter {
 ```
 
 If you run the application now, you'll see that both `hello` and `login <your
-name>` both work. Make sure to update the `@Component` annotation to include
+name>` both work. Make sure to update the [`@Component`] annotation to include
 both modules.
 
 > **CONCEPTS**
 >
-> *   **`@IntoMap`** allows for the creation of a map with values of a specific
->     type, with keys set using special annotations such as `@StringKey` or
->     `@IntKey`. Because keys are set via annotation, Dagger ensures that
->     multiple values are not mapped to the same key.
-> *   **`@IntoSet`** allows for the creation of a set of types to be collected
->     together. It can be used together with `@Binds` and `@Provides` methods to
->     provide a `Set<ReturnType>`.
-> *   `@IntoMap` and `@IntoSet` are both ways of introducing what is often
+> *   **[`@IntoMap`]** allows for the creation of a map with values of a
+>     specific type, with keys set using special annotations such as
+>     [`@StringKey`] or [`@IntKey`]. Because keys are set via annotation, Dagger
+>     ensures that multiple values are not mapped to the same key.
+> *   **[`@IntoSet`]** allows for the creation of a set of types to be collected
+>     together. It can be used together with [`@Binds`] and [`@Provides`]
+>     methods to provide a `Set<ReturnType>`.
+> *   [`@IntoMap`] and [`@IntoSet`] are both ways of introducing what is often
 >     called "multibindings", where a collection contains elements from several
 >     different binding methods.
 
 [Previous](06-new-command) · [Next](08-user-specific-types)
 {@paragraph style="text-align: center"}
+
+[`@Binds`]: https://dagger.dev/api/latest/dagger/Binds.html
+[`@Component`]: https://dagger.dev/api/latest/dagger/Component.html
+[`@IntKey`]: https://dagger.dev/api/latest/dagger/multibindings/IntKey.html
+[`@IntoMap`]: https://dagger.dev/api/latest/dagger/multibindings/IntoMap.html
+[`@IntoSet`]: https://dagger.dev/api/latest/dagger/multibindings/IntoSet.html
+[`@Provides`]: https://dagger.dev/api/latest/dagger/Provides.html
+[`@StringKey`]: https://dagger.dev/api/latest/dagger/multibindings/StringKey.html

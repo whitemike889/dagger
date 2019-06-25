@@ -5,7 +5,7 @@ If you run the application and try to run `login first-username` followed by
 
 The values in the `Map<String, Command>` that are available in
 `CommandProcessorFactory` are `[HelloWorldCommand, LoginCommand]`. When we
-created the `@Subcomponent` for `UserCommandsRouter`, it inherited the modules
+created the [`@Subcomponent`] for `UserCommandsRouter`, it inherited the modules
 from `CommandProcessorFactory`, and therefore also the values of `Map<String,
 Command>`. So the full set of values in the `Map<String, Command>` for
 `UserCommandsRouter` is `[HelloWorldCommand, LoginCommand, DepositCommand,
@@ -45,7 +45,7 @@ final class LoginCommand extends SingleArgCommand {
 ```
 
 In order to tell Dagger how to supply this `Optional<Account>`, let's add a
-`@BindsOptionalOf` method to `LoginCommandModule`:
+[`@BindsOptionalOf`] method to `LoginCommandModule`:
 
 ```java
 @Module
@@ -57,11 +57,9 @@ interface LoginCommandModule {
 }
 ```
 
-When Dagger sees a `@BindsOptionalOf` method, it will use `Optional.of(<the
+When Dagger sees a [`@BindsOptionalOf`] method, it will use `Optional.of(<the
 account>)` if an `Account` is available; if not, it will use `Optional.empty()`
-(or
-[`Optional.absent()`](https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/base/Optional.html)
-if you're using the Guava version of `Optional`).
+(or `Optional.absent()` if you're using the Guava version of `Optional`).
 
 Looking back, we can now see that within `CommandProcessorFactory`, there is no
 `Account`, but within `UserCommandsRouter` there is. Each will have its own
@@ -73,10 +71,13 @@ different logic in both cases!
 > *   When Dagger creates sets or maps of objects, the set or map will contain
 >     all values from any parent component(s) in addition to the values that are
 >     installed by bindings in the component itself.
-> *   **`@BindsOptionalOf`** tells Dagger that it can construct instances of
+> *   **[`@BindsOptionalOf`]** tells Dagger that it can construct instances of
 >     `Optional<ReturnType>`. The presence of the `Optional` is determined by
 >     whether Dagger knows how to create an instance of `ReturnType`, and it can
 >     be present in a subcomponent but absent in its parent.
 
 [Previous](13-max-withdrawal-across-commands)
 {@paragraph style="text-align: center"}
+
+[`@BindsOptionalOf`]: https://dagger.dev/api/latest/dagger/BindsOptionalOf.html
+[`@Subcomponent`]: https://dagger.dev/api/latest/dagger/Subcomponent.html

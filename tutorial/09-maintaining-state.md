@@ -26,9 +26,9 @@ final class DepositCommand implements Command {
 }
 ```
 
-Try adding this command with a `@Binds @IntoMap` method like the commands above.
-Let's put it in a module called `UserCommandsModule` that will hold all of the
-commands that deal with a specific user:
+Try adding this command with a [`@Binds`]&nbsp;[`@IntoMap`] method like the
+commands above. Let's put it in a module called `UserCommandsModule` that will
+hold all of the commands that deal with a specific user:
 
 ```java
 @Module
@@ -56,10 +56,11 @@ Dagger by default provides one `Database` object when `LoginCommand` requests it
 and another when `DepositCommand` requests it.
 
 In order to tell Dagger that they both need to share the same instance of
-`Database`, we annotate the `Database` class with `@Singleton` (from the
-`javax.inject` package). We also annotate our `@Component` type with
-`@Singleton` to declare that instances of classes annotated with `@Singleton`
-should be shared among other objects that depend on them in this component.
+`Database`, we annotate the `Database` class with
+[`@Singleton`](from the `javax.inject` package). We also annotate our
+[`@Component`] type with [`@Singleton`] to declare that instances of classes
+annotated with [`@Singleton`] should be shared among other objects that depend
+on them in this component.
 
 ```java
 @Singleton
@@ -77,12 +78,19 @@ Try rerunning again. Now the login and deposit commands share a single
 
 > **CONCEPTS**
 >
-> *   **`@Singleton`** instructs Dagger to create only one instance of the type
->     for each instance of the component. It can be used on the class
->     declaration of a type that has an `@Inject` constructor, or on a `@Binds`
->     or `@Provides` method.
+> *   **[`@Singleton`]** instructs Dagger to create only one instance of the
+>     type for each instance of the component. It can be used on the class
+>     declaration of a type that has an [`@Inject`] constructor, or on a
+>     [`@Binds`] or [`@Provides`] method.
 > *   It's not yet clear why you have to annotate the component with
->     `@Singleton` as well, but it will become clearer later.
+>     [`@Singleton`] as well, but it will become clearer later.
 
 [Previous](08-user-specific-types) · [Next](10-deposit-after-login)
 {@paragraph style="text-align: center"}
+
+[`@Binds`]: https://dagger.dev/api/latest/dagger/Binds.html
+[`@Component`]: https://dagger.dev/api/latest/dagger/Component.html
+[`@Inject`]: http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html
+[`@IntoMap`]: https://dagger.dev/api/latest/dagger/multibindings/IntoMap.html
+[`@Provides`]: https://dagger.dev/api/latest/dagger/Provides.html
+[`@Singleton`]: http://docs.oracle.com/javaee/7/api/javax/inject/Singleton.html

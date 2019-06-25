@@ -70,7 +70,7 @@ final class WithdrawCommand extends BigDecimalCommand {
 }
 ```
 
-Now let's create a new module with `@Provides` methods for the two values:
+Now let's create a new module with [`@Provides`] methods for the two values:
 
 ```java
 @Module
@@ -102,8 +102,7 @@ two binding methods for `BigDecimal` and it doesn't know which it should use.
 To differentiate between different things of the same Java type in a case like
 this, we use _qualifiers_. A qualifier is an annotation that can be used to give
 Dagger information it can use to distinguish between instances of the same type.
-Qualifiers are annotations that are themselves annotated with
-[`@Qualifier`](http://javax-inject.github.io/javax-inject/api/javax/inject/Qualifier.html).
+Qualifiers are annotations that are themselves annotated with [`@Qualifier`].
 Here's how we might define annotations for qualifying our `BigDecimal` values:
 
 ```java
@@ -159,9 +158,9 @@ adjust the minimum balance and maximum withdrawal amounts if desired.
 
 > **CONCEPTS**
 >
-> *   **`@Qualifier`** annotations are used to differentiate between instances
+> *   **[`@Qualifier`]** annotations are used to differentiate between instances
 >     of the same type that are unrelated.
->     *   Contrast this with `@IntoSet` and `@IntoMap`, where the collected
+>     *   Contrast this with [`@IntoSet`] and [`@IntoMap`], where the collected
 >         objects are used together.
 > *   Qualifiers are often, but certainly not always, used with common data
 >     types such as primitive types and `String`, which may be used in many
@@ -169,3 +168,8 @@ adjust the minimum balance and maximum withdrawal amounts if desired.
 
 [Previous](10-deposit-after-login) · [Next](12-logging-out)
 {@paragraph style="text-align: center"}
+
+[`@IntoMap`]: https://dagger.dev/api/latest/dagger/multibindings/IntoMap.html
+[`@IntoSet`]: https://dagger.dev/api/latest/dagger/multibindings/IntoSet.html
+[`@Provides`]: https://dagger.dev/api/latest/dagger/Provides.html
+[`@Qualifier`]: http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html

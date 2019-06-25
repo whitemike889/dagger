@@ -1,7 +1,7 @@
 # Initial Dagger setup
 
 Let's change our example to actually use Dagger to create an instance of
-`CommandRouter`. We'll start by creating a `@Component` interface:
+`CommandRouter`. We'll start by creating a [`@Component`] interface:
 
 ```java
 @Component
@@ -13,7 +13,7 @@ interface CommandRouterFactory {
 `CommandRouterFactory` is a normal factory type for `CommandRouter`s. Its
 implementation would call `new CommandRouter()` instead of our main method doing
 it. But instead of us writing the implementation of `CommandRouterFactory`, we
-can annotate it with `@Component` to have Dagger _generate_ an implementation
+can annotate it with [`@Component`] to have Dagger _generate_ an implementation
 for us: `DaggerCommandRouterFactory`. Note that it has a static `create()`
 method to give us an instance to use.
 
@@ -33,7 +33,7 @@ class CommandLineAtm {
 ```
 
 In order for Dagger to know how to create a `CommandRouter`, we also need to add
-an `@Inject` annotation to its constructor:
+an [`@Inject`] annotation to its constructor:
 
 ```java
 final class CommandRouter {
@@ -44,7 +44,7 @@ final class CommandRouter {
 }
 ```
 
-The `@Inject` annotation indicates to Dagger that when we ask for a
+The [`@Inject`] annotation indicates to Dagger that when we ask for a
 `CommandRouter`, Dagger should call `new CommandRouter()`.
 
 > **Aside:*** See [these instructions] for how to properly add Dagger to your
@@ -57,13 +57,16 @@ application! Run the application again to see it in action.
 
 > **CONCEPTS**
 >
-> *   **`@Component`** tells Dagger to implement an `interface` or `abstract
+> *   **[`@Component`]** tells Dagger to implement an `interface` or `abstract
 >     class` that creates and returns one or more application objects.
 >     *   Dagger will generate a class that implements the component type. The
 >         generated type will be named `DaggerYourType` (or
 >         `DaggerYourType_NestedType` for nested types)
-> *   **`@Inject`** on a constructor tells Dagger how to instantiate that class.
->     We'll see more shortly.
+> *   **[`@Inject`]** on a constructor tells Dagger how to instantiate that
+>     class. We'll see more shortly.
 
 [Previous](01-setup) · [Next](03-first-command)
 {@paragraph style="text-align: center"}
+
+[`@Component`]: https://dagger.dev/api/latest/dagger/Component.html
+[`@Inject`]: http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html

@@ -39,7 +39,7 @@ abstract class LoginCommandModule {
 ```
 
 To start using the `LoginCommand` in `CommandRouter`, replace `HelloWorldModule`
-in the `@Component` annotation with `LoginCommandModule`. Run the application
+in the [`@Component`] annotation with `LoginCommandModule`. Run the application
 and try to log in.
 
 This begins to show some of the benefits of using Dagger. With a one line
@@ -52,3 +52,5 @@ code without massive changes.
 {@paragraph style="text-align: center"}
 
 [SingleArgCommand]: https://github.com/google/dagger/tree/master/java/dagger/example/atm/SingleArgCommand.java
+
+[`@Component`]: https://dagger.dev/api/latest/dagger/Component.html

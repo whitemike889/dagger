@@ -44,16 +44,16 @@ final class CommandRouter {
 This parameter tells Dagger that when it creates a `CommandRouter` instance, it
 should also provide a `HelloWorldCommand` instance and pass that to the
 constructor, i.e. `new CommandRouter(helloWorldCommand)`. Dagger knows how to
-create a `HelloWorldCommand` because it has an `@Inject` constructor, just like
-`CommandRouter`.
+create a `HelloWorldCommand` because it has an [`@Inject`] constructor, just
+like `CommandRouter`.
 
 If you try to run the application, you'll see that you can now type `hello` and
 the application will respond `world!`. We're making progress!
 
 > **CONCEPTS**
 >
-> *   Parameters to an `@Inject` constructor are the dependencies of the class.
->     Dagger will provide a class's dependencies to instantiate the class
+> *   Parameters to an [`@Inject`] constructor are the dependencies of the
+>     class. Dagger will provide a class's dependencies to instantiate the class
 >     itself. Note that this is recursive: a dependency may have dependencies of
 >     its own!
 > *   **Terminology:**
@@ -66,9 +66,11 @@ the application will respond `world!`. We're making progress!
 >         order to emphasize that something else puts a `HelloWorldCommand`
 >         object into `CommandRouter`, in contrast to `CommandRouter` itself
 >         fetching or creating one. But it's also common to say that _Dagger_
->         injects `CommandRouter` because it instantiates it via its `@Inject`
+>         injects `CommandRouter` because it instantiates it via its [`@Inject`]
 >         constructor. These different uses of the word "injects" can get
 >         confusing, so we're using the more explicit terms in this tutorial.
 
 [Previous](02-initial-dagger) · [Next](04-depending-on-interface)
 {@paragraph style="text-align: center"}
+
+[`@Inject`]: http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html
