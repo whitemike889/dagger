@@ -303,6 +303,68 @@ be asked to create a monitor for the component. The resulting (single) instance
 will be held for the lifetime of the component, and will be used to create
 individual monitors for each producer method.
 
+## Cancellation behavior
+
+For Dagger Producers, cancellation happens for the whole component rather than
+for individual tasks in the graph.
+
+When a `ListenableFuture` returned from an entry point method on a production
+component is cancelled (either because `cancel()` was called on it directly or
+because some future it depends on was cancelled), Dagger will cancel all tasks
+defined by that component, _even tasks that entry point doesn't depend on at
+all_. When one entry point of a production component is cancelled, all of its
+entry points will be cancelled.
+
+Importantly, though, if the component is a production subcomponent, nodes in the
+graph that are defined by a parent will _not_ be cancelled unless the parent
+component specifically allows that by being annotated with
+[`@CancellationPolicy(fromSubcomponents = PROPAGATE)`][CancellationPolicy].
+
+This means two things:
+
+1.  Cancelling an entry point on a subcomponent will not cause its parent
+    component to be cancelled, and by extension will not cause any other
+    instances of that subcomponent (or other subcomponents of the same parent)
+    to be cancelled.
+2.  If you really need multiple entry points for a component _and_ need to be
+    able to cancel them independently of one another, you can push the entry
+    points down into their own subcomponents to achieve that. For example:
+
+```java
+@ProductionComponent(modules = {FooModule.class, BarModule.class})
+interface MyComponent {
+  ListenableFuture<Foo> foo();
+  ListenableFuture<Bar> bar();
+}
+
+// If we want to be able to cancel foo() without cancelling bar() this might
+// become:
+
+@ProductionComponent(modules = BarModule.class)
+interface MyComponent {
+  FooComponent.Factory fooComponentFactory();
+  ListenableFuture<Bar> bar();
+}
+
+@ProductionSubcomponent(modules = FooModule.class)
+interface FooComponent {
+  ListenableFuture<Foo> foo();
+
+  @ProductionSubcomponent.Factory
+  interface Factory {
+    FooComponent create();
+  }
+}
+
+// Then instead of myComponent.foo(), write
+
+myComponent.fooComponentFactory().create().foo();
+```
+
+You could even leave `FooModule` in `MyComponent`, but putting tasks that only
+`Foo` depends on in `FooComponent` will ensure all of those tasks can be
+cancelled when the `Foo` task is cancelled.
+
 ## Timing, Logging and Debugging
 
 **As of March 2016, not implemented yet**
@@ -329,6 +391,7 @@ for `Foo`, then a `@Produces` method can depend on any of:
 <!-- References -->
 
 [`@BindsOptionalOf`]: https://dagger.dev/api/latest/dagger/BindsOptionalOf.html
+[CancellationPolicy]: https://dagger.dev/api/latest/dagger/producers/CancellationPolicy.html
 [Component]: https://dagger.dev/api/latest/dagger/Component.html
 [Dagger 2]: http://dagger.dev/
 [ListenableFuture]: https://github.com/google/guava/wiki/ListenableFutureExplained
