@@ -2,8 +2,8 @@
 
 Right now, `HelloWorldCommand` uses `System.out.println()` to write its output.
 In the spirit of dependency injection, let's use an abstraction so that we can
-remove this _implicit_ dependency on `System.out`. What we'll do is create an
-`Outputter` type that does something with text that's written to it. Our default
+remove this direct use of `System.out`. What we'll do is create an `Outputter`
+type that does something with text that's written to it. Our default
 implementation can still use `System.out.println()`, but this gives us
 flexibility to change that later without changing `HelloWorldCommand`. For
 example, our tests may use an implementation that adds the string to a
@@ -36,7 +36,7 @@ public Status handleInput(List<String> input) {
 
 `Outputter` is an `interface`. We could write an implementation of it, give that
 class an [`@Inject`] constructor, and then use [`@Binds`] to bind `Outputter` to
-that implementation. But `Outputter` is very simple… so simple that we could
+that implementation. But `Outputter` is very simple … so simple that we could
 even implement it as a lambda or method reference. So instead of doing all that,
 let's write a `static` method that just creates and returns an instance of
 `Outputter` itself!
@@ -71,8 +71,8 @@ class CommandLineAtm {
 ```
 
 Once again, nothing has changed about the _behavior_ of our application, but
-it's now easy to write unit tests for our command without it actually writing to
-`System.out`.
+it's now easy to write unit tests for our command without causing it to actually
+write to `System.out`.
 
 > **CONCEPTS**
 >
@@ -82,7 +82,7 @@ it's now easy to write unit tests for our command without it actually writing to
 >     constructors, they can have parameters: those parameters are their
 >     dependencies.
 > *   [`@Provides`] methods can contain arbitrary code as long as they return an
->     instance of the provided type. They need-not create a new instance on each
+>     instance of the provided type. They need not create a new instance on each
 >     invocation.
 >     *   This highlights an important aspect of Dagger (and dependency
 >         injection as a whole): when a type is requested, whether or not a new

@@ -51,7 +51,7 @@ final class CommandRouter {
     this.commands = commands;
   }
 
-  …
+  ...
 }
 ```
 

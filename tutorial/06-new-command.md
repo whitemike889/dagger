@@ -38,9 +38,9 @@ abstract class LoginCommandModule {
 }
 ```
 
-To start using the `LoginCommand` in `CommandRouter`, replace `HelloWorldModule`
-in the [`@Component`] annotation with `LoginCommandModule`. Run the application
-and try to log in.
+To start using the `LoginCommand` in `CommandRouter`, we'll replace
+`HelloWorldModule` in the [`@Component`] annotation with `LoginCommandModule`.
+Run the application and try to log in.
 
 This begins to show some of the benefits of using Dagger. With a one line
 _declarative_ change, we were able to change what `Command` was received by

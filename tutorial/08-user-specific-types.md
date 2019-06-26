@@ -38,7 +38,7 @@ balance when a user logs in:
 
 ```java
 final class LoginCommand extends SingleArgCommand {
-  …
+  ...
 
   @Inject
   LoginCommand(Database database, Outputter outputter) { … }

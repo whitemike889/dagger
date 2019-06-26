@@ -4,10 +4,10 @@ Let's add a command for withdrawing funds from your account:
 
 ```java
 final class WithdrawCommand extends BigDecimalCommand {
-  …
+  ...
 
   @Inject
-  WithdrawCommand(Outputter outputter, Account account) { … }
+  WithdrawCommand(Outputter outputter, Account account) {  ...  }
 
   @Override
   public void handleAmount(BigDecimal amount) {
@@ -41,7 +41,7 @@ the withdrawal logic to check them:
 
 ```java
 final class WithdrawCommand extends BigDecimalCommand {
-  …
+  ...
 
   @Inject
   WithdrawCommand(
@@ -49,7 +49,7 @@ final class WithdrawCommand extends BigDecimalCommand {
     Account account,
     BigDecimal minimumBalance,
     BigDecimal maximumWithdrawal) {
-    …
+    ...
   }
 
   @Override
@@ -92,7 +92,7 @@ And add the module to our `CommandProcessorFactory` component:
 ```java
 @Component(modules = {..., AmountsModule.class})
 interface CommandProcessorFactory {
-  …
+  ...
 }
 ```
 
@@ -138,18 +138,16 @@ Now we can update `WithdrawCommand`'s constructor to depend on the qualified
 
 ```java
 final class WithdrawCommand implements Command {
-  …
+  ...
 
   @Inject
   WithdrawCommand(
     Outputter outputter,
     Account account,
     @MinimumBalance BigDecimal minimumBalance,
-    @MaximumWithdrawal BigDecimal maximumWithdrawal) {
-    …
-  }
+    @MaximumWithdrawal BigDecimal maximumWithdrawal) { ... }
 
-  …
+  ...
 }
 ```
 

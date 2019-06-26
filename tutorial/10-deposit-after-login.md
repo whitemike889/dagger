@@ -6,8 +6,7 @@ refactoring.
 
 ## Refactoring: Introducing a `CommandProcessor`
 
-We can introduce a `CommandProcessor` that contains a
-[stack](https://en.wikipedia.org/wiki/Stack_\(abstract_data_type\)) of
+We can introduce a `CommandProcessor` that contains a [stack] of
 `CommandRouter`s. Pushing onto the stack will enable a new set of commands to be
 processed. Popping will return to the previous set of commands. We can modify
 `Command.handleInput()` to return a `Result` that is a combination of the
@@ -77,7 +76,7 @@ class CommandLineAtm {
     }
   }
 
-  @Component(modules = …)
+  @Component(modules =  ... )
   interface CommandProcessorFactory {
     CommandProcessor processor();
   }
@@ -133,7 +132,7 @@ There are a few things that are happening here. Let's break it down:
         the `Account` instance we pass as an argument should be requestable by
         any [`@Inject`] constructor, [`@Binds`] method, or [`@Provides`] method
         in this subcomponent.
-*   We have a module that declares the subcomponent. Include this module in
+*   We have a module that declares the subcomponent. Including this module in
     _another component_ will make the [`@Subcomponent.Factory`] available there.
     That's our bridge between the two components.
 
@@ -221,5 +220,6 @@ final class DepositCommand extends BigDecimalCommand {
 [`@Module`]: https://dagger.dev/api/latest/dagger/Module.html
 [`@Provides`]: https://dagger.dev/api/latest/dagger/Provides.html
 [`@Singleton`]: http://docs.oracle.com/javaee/7/api/javax/inject/Inject.html
+[stack]: https://en.wikipedia.org/wiki/Stack_\(abstract_data_type\)
 [`@Subcomponent`]: https://dagger.dev/api/latest/dagger/Subcomponent.html
 [`@Subcomponent.Factory`]: https://dagger.dev/api/latest/dagger/Subcomponent.Factory.html

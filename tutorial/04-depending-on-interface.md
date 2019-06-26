@@ -8,7 +8,7 @@ Let's instead specify `CommandRouter`'s dependency as a plain `Command`:
 ```java
 @Inject
 CommandRouter(Command command) {
-  …
+  ...
 }
 ```
 

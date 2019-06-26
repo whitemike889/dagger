@@ -7,10 +7,10 @@ In order to help find it, let's first create a `deposit` command:
 
 ```java
 final class DepositCommand implements Command {
-  …
+  ...
 
   @Inject
-  DepositCommand(Database database, Outputter outputter) { … }
+  DepositCommand(Database database, Outputter outputter) {  ...  }
 
   @Override
   public Status handleInput(List<String> input) {
@@ -26,9 +26,9 @@ final class DepositCommand implements Command {
 }
 ```
 
-Try adding this command with a [`@Binds`]&nbsp;[`@IntoMap`] method like the
-commands above. Let's put it in a module called `UserCommandsModule` that will
-hold all of the commands that deal with a specific user:
+Let's try adding this command with a [`@Binds`]&nbsp;[`@IntoMap`] method like
+the commands above. Let's put it in a module called `UserCommandsModule` that
+will hold all of the commands that deal with a specific user.
 
 ```java
 @Module

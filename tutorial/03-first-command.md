@@ -37,15 +37,15 @@ final class CommandRouter {
     commands.put(helloWorldCommand.key(), helloWorldCommand);
   }
 
-  …
+  ...
 }
 ```
 
 This parameter tells Dagger that when it creates a `CommandRouter` instance, it
 should also provide a `HelloWorldCommand` instance and pass that to the
-constructor, i.e. `new CommandRouter(helloWorldCommand)`. Dagger knows how to
-create a `HelloWorldCommand` because it has an [`@Inject`] constructor, just
-like `CommandRouter`.
+constructor: `new CommandRouter(helloWorldCommand)`. Dagger knows how to create
+a `HelloWorldCommand` because it has an [`@Inject`] constructor, just like
+`CommandRouter`.
 
 If you try to run the application, you'll see that you can now type `hello` and
 the application will respond `world!`. We're making progress!

@@ -66,7 +66,7 @@ final class CommandRouter {
   }
 
   // Split on whitespace
-  private static List<String> split(String string) { … }
+  private static List<String> split(String string) {  ...  }
 }
 ```
 
