@@ -199,7 +199,7 @@ extends java.lang.Object</pre>
  otherwise throws an <code>IllegalArgumentException</code>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasActivityInjector.html" title="interface in dagger.android"><code>HasActivityInjector</code></a>.</dd>
+<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -213,22 +213,22 @@ extends java.lang.Object</pre>
 <div class="block">Injects <code>fragment</code> if an associated <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> implementation can be found,
  otherwise throws an <code>IllegalArgumentException</code>.
 
- <p>Uses the following algorithm to find the appropriate <a href="../../dagger/android/AndroidInjector.html" title="interface in dagger.android"><code>AndroidInjector</code></a> to use to
- inject <code>fragment</code>:
+ <p>Uses the following algorithm to find the appropriate <code>AndroidInjector&lt;Fragment&gt;</code> to
+ use to inject <code>fragment</code>:
 
  <ol>
-   <li>Walks the parent-fragment hierarchy to find a fragment that implements <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android"><code>HasFragmentInjector</code></a>, and if none do
+   <li>Walks the parent-fragment hierarchy to find the a fragment that implements <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>, and if none do
    <li>Uses the <code>fragment</code>'s <code>activity</code> if it implements
-       <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android"><code>HasFragmentInjector</code></a>, and if not
-   <li>Uses the <code>Application</code> if it implements <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>
-       <a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android"><code>HasFragmentInjector</code></a>.
+       <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>, and if not
+   <li>Uses the <code>Application</code> if it implements <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>.
  </ol>
 
- If none of them implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android"><code>HasFragmentInjector</code></a>, a <code>IllegalArgumentException</code> is thrown.</div>
+ If none of them implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>, a <code>IllegalArgumentException</code> is
+ thrown.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - if no parent fragment, activity, or application implements
-     <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasFragmentInjector.html" title="interface in dagger.android"><code>HasFragmentInjector</code></a>.</dd>
+     <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -243,7 +243,7 @@ extends java.lang.Object</pre>
  otherwise throws an <code>IllegalArgumentException</code>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasServiceInjector.html" title="interface in dagger.android"><code>HasServiceInjector</code></a>.</dd>
+<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -259,7 +259,7 @@ extends java.lang.Object</pre>
  be found, otherwise throws an <code>IllegalArgumentException</code>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> from <code>Context.getApplicationContext()</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasBroadcastReceiverInjector.html" title="interface in dagger.android"><code>HasBroadcastReceiverInjector</code></a>.</dd>
+<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> from <code>Context.getApplicationContext()</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -274,7 +274,7 @@ extends java.lang.Object</pre>
  found, otherwise throws an <code>IllegalArgumentException</code>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a> or <a href="../../dagger/android/HasContentProviderInjector.html" title="interface in dagger.android"><code>HasContentProviderInjector</code></a>.</dd>
+<dd><code>java.lang.RuntimeException</code> - if the <code>Application</code> doesn't implement <a href="../../dagger/android/HasAndroidInjector.html" title="interface in dagger.android"><code>HasAndroidInjector</code></a>.</dd>
 </dl>
 </li>
 </ul>
